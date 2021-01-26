@@ -55,10 +55,10 @@ const Landing = ({history}) => {
                             Referl
                         </a>
                         <a href="#news" className="non_active first_bar_but ">
-                            <Link className="a_tag" to="#">for shopowners</Link>{" "}
+                            <Link className="a_tag" to="#">For Shipowner</Link>{" "}
                         </a>
                         <a href="/login" className="non_active ">
-                            <Link className="a_tag" to="/login">for influencers</Link>{" "}
+                            <Link className="a_tag" to="/login">For Influencer</Link>{" "}
                         </a>
                         <a className="icon" onClick={myFunction}>
                             &#9776;
