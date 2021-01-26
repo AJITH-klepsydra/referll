@@ -7,6 +7,21 @@ import "firebase/database";
 import "./Influencerdetails.css";
 
 const InfDetails = ({history}) => {
+    const user = firebase.auth().currentUser;
+    if (user) {
+        app
+            .database()
+            .ref("users")
+            .child("influencers")
+            .child(user.uid)
+            .child("is_completed")
+            .get()
+            .then((result) => {
+                if (result.val()) {
+                    history.push("/influencer");
+                }
+            });
+    }
     const handleDetails = useCallback(
         async (event) => {
             if (CheckDetails()) {

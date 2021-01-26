@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "./banner.css";  
+import "./banner.css";
 import app from "../base";
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -8,6 +8,7 @@ import share from "./banner-assets/share_square.svg";
 import shop from "./banner-assets/shop.jpg";
 import logout from "./banner-assets/logout.svg";
 import user from "./banner-assets/user.svg";
+
 let Arr = [];
 
 function push_status(status_code, message) {
@@ -174,7 +175,7 @@ function visualiser(data) {
                     document.getElementById("desc").innerHTML =
                         data[i]["details"]["current_offer"]["description"];
                     document.getElementById("date").innerHTML =
-                        "valid for " + data[i]["details"]["current_offer"]["validity"]+" days";
+                        "valid for " + data[i]["details"]["current_offer"]["validity"] + " days";
                     document.getElementById("shp").innerHTML = data[i]["name"];
                     document.getElementById("cat").innerHTML =
                         data[i]["details"]["shop_category"];
@@ -184,7 +185,7 @@ function visualiser(data) {
                         shop +
                         ")";
                     document.getElementById("card-box").className = "cards-wrapper";
-                    document.getElementById("loginScreen").scrollTo(0,document.body.scrollHeight);
+                    document.getElementById("loginScreen").scrollTo(0, document.body.scrollHeight);
                 };
                 a.setAttribute("name", data[i]["name"]);
                 let card = document.createElement("div");
@@ -192,7 +193,7 @@ function visualiser(data) {
                 let image = document.createElement("img");
                 image.setAttribute("src", shop);
                 image.setAttribute("class", "card_imag");
-                image.setAttribute("style","width:50px;");
+                image.setAttribute("style", "width:50px;");
                 let h = document.createElement("h4");
                 h.innerHTML = data[i]["name"];
                 let p = document.createElement("p");
@@ -257,7 +258,7 @@ const Banner = () => {
 
     return (
         <div className="main_container">
-            <section id="status_msg" className="snackbar"></section>
+            <section id="status_msg" className="nothing"></section>
             <div id="loginScreen">
                 <a href="#" className="cancel">
                     ×
@@ -265,7 +266,7 @@ const Banner = () => {
                 <h1 className="title">Find your shop</h1>
                 <input
                     className="input"
-                    style={{marginLeft:'0',backgroundColor:"white",border:"1px solid black"}}
+                    style={{marginLeft: '0', backgroundColor: "white", border: "1px solid black"}}
                     placeholder="search..."
                     type="text"
                     onInput={(e) => {
@@ -312,17 +313,12 @@ const Banner = () => {
             <div id="cover"></div>
 
 
-
-
-
-
-
             <section className="banner">
-            <div className="top_first">
-                <img src={user}/>
-                <br/>
-                <p>{name}</p>
-            </div>
+                <div className="top_first">
+                    <img src={user}/>
+                    <br/>
+                    <p>{name}</p>
+                </div>
                 <p onClick={() => app.auth().signOut()}>
                     <img className="logout_icon"
                          style={{
@@ -330,7 +326,7 @@ const Banner = () => {
                              right: "10px",
                              top: "10px",
                              width: "40px",
-                             
+
                          }}
                          src={logout}
                     />
@@ -346,8 +342,7 @@ const Banner = () => {
                             </div>
                             <img src={share}/>
                         </div>
-                        <p className="status-text">
-                            <font color="#7ED957;"> 7.15% &nbsp;</font> Since last month
+                        <p className="status-text"> Redeemed Referral
                         </p>
                     </div>
                     <div className="card_div">
@@ -359,7 +354,7 @@ const Banner = () => {
                             <img src={money}/>
                         </div>
                         <p className="status-text">
-                            <font color="#7ED957;"> 7.15% &nbsp;</font> Since last month
+                            Earnings
                         </p>
                     </div>
                 </section>

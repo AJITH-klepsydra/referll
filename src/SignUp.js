@@ -3,9 +3,8 @@ import {withRouter} from "react-router";
 import app from "./base";
 import firebase from "firebase/app";
 import "firebase/auth";
-import "firebase/database";
+import 'firebase/database';
 import "./SignUp.css";
-import avatar from "./assets/logo.jpeg";
 import google from "./assets/google.svg";
 import {Link} from "react-router-dom";
 
@@ -43,6 +42,13 @@ const SignUp = ({history}) => {
                     .once("value")
                     .then((result) => {
                         if (!result.hasChild(res.user.uid)) {
+                            let verified_name = res.user.displayName.replace(".", "");
+                            verified_name = verified_name.replace("<", "&lt;");
+                            verified_name = verified_name.replace(">", "&gt;");
+                            verified_name = verified_name.replace("#", "");
+                            verified_name = verified_name.replace("$", "");
+                            verified_name = verified_name.replace("|", "");
+                            verified_name = verified_name.replace("^", "");
                             app
                                 .database()
                                 .ref("users")
@@ -50,7 +56,7 @@ const SignUp = ({history}) => {
                                 .child(res.user.uid)
                                 .set({
                                     is_completed: false,
-                                    full_name: res.user.displayName,
+                                    full_name: verified_name,
                                 });
                             history.push("/influencerdetails");
                         } else {
@@ -85,11 +91,18 @@ const SignUp = ({history}) => {
                     .createUserWithEmailAndPassword(email.value, password.value);
                 firebase.auth().onAuthStateChanged((user) => {
                     if (user) {
-                        // User logged in already or has just logged in.
+                        let verified_name = username.value.replace(".", "");
+                        verified_name = verified_name.replace("<", "&lt;");
+                        verified_name = verified_name.replace(">", "&gt;");
+                        verified_name = verified_name.replace("#", "");
+                        verified_name = verified_name.replace("$", "");
+                        verified_name = verified_name.replace("|", "");
+                        verified_name = verified_name.replace("^", "");
+
                         console.log(user.uid);
                         console.log(username);
                         const ref = app.database().ref("users/influencers").child(user.uid);
-                        ref.child("full_name").set(username.value);
+                        ref.child("full_name").set(verified_name);
                         ref.child("is_completed").set(false);
                         history.push("/influencerdetails");
                     } else {
@@ -107,7 +120,7 @@ const SignUp = ({history}) => {
         <React.Fragment>
             <br/>
             <br/>
-            <form class="myform_m" onSubmit={handleSignUp}>
+            <form className="myform_m" onSubmit={handleSignUp}>
 
                 <div className="container_m">
                     <h2 className="form_head">Welcome to Referl!</h2>

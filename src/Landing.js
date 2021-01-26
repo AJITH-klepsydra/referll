@@ -1,6 +1,4 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import {Link} from "react-router-dom";
 import "./Landing.css";
 import "./Landingresponse.css";
@@ -13,9 +11,10 @@ import prs from "./assets/prs.svg";
 import purse from "./assets/purse.svg";
 import shield from "./assets/shield.svg";
 import kid from "./assets/kid.svg";
-import firebase from "firebase";
-import app from "./base"; 
-import { Route, Redirect } from "react-router-dom";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import app from "./base";
 
 
 const Landing = ({history}) => {
@@ -49,54 +48,54 @@ const Landing = ({history}) => {
 
     return (
         <React.Fragment>
-        <div className="main_hero" >
-            <div className="topnav" id="myTopnav">
-                <div className="bar_buts">
-                    <a href="#home" className="active ">
-                        Referl
-                    </a>
-                    <a href="#news" className="non_active first_bar_but ">
-                        <Link className="a_tag" to="#">for shopowners</Link>{" "}
-                    </a>
-                    <a href="/login" className="non_active ">
-                        <Link className="a_tag" to="/login">for influencers</Link>{" "}
-                    </a>
-                    <a className="icon" onClick={myFunction}>
-                        &#9776;
-                    </a>
+            <div className="main_hero">
+                <div className="topnav" id="myTopnav">
+                    <div className="bar_buts">
+                        <a href="#home" className="active ">
+                            Referl
+                        </a>
+                        <a href="#news" className="non_active first_bar_but ">
+                            <Link className="a_tag" to="#">for shopowners</Link>{" "}
+                        </a>
+                        <a href="/login" className="non_active ">
+                            <Link className="a_tag" to="/login">for influencers</Link>{" "}
+                        </a>
+                        <a className="icon" onClick={myFunction}>
+                            &#9776;
+                        </a>
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="hero">
-                <div class="hero_buts">
-                    <div class="hero_cont">
-                        <h1>Increase customer acquisition by 5x. Word of mouth</h1>
-                        <p>
-                            Reward your customers for referring their friends and followers to
-                            your shops.
-                        </p>
-                        <div class="actions_buts">
-                            <button> <a href="/influencer">Start earning</a></button>
-                            <button style={{color:"black",backgroundColor:"white"}}> Boost your business</button>
+                <div className="hero">
+                    <div className="hero_buts">
+                        <div className="hero_cont">
+                            <h1>Increase customer acquisition by 5x. Word of mouth</h1>
+                            <p>
+                                Reward your customers for referring their friends and followers to
+                                your shops.
+                            </p>
+                            <div className="actions_buts">
+                                <button><a><Link to="/login">Start earning</Link>{" "}</a></button>
+                                <button style={{color: "black", backgroundColor: "white"}}> Boost your business</button>
+                            </div>
+                        </div>
+                        <div className="hero_image">
+                            <img src={hero}/>
                         </div>
                     </div>
-                    <div class="hero_image">
-                        <img src={hero}/>
+                </div>
+                <section class="arrow">
+                    <div class="how">
+                        <a class="start" href="#start">
+                            <h2 class="arr">
+                                How it works
+                                <br/>
+                                <img src={arrow} style={{marginTop: "25px"}}/>
+                            </h2>
+                        </a>
                     </div>
-                </div>
-            </div>
-           <section class="arrow">
-                <div class="how">
-                    <a class="start"href="#start">
-                        <h2 class="arr">
-                            How it works
-                            <br/>
-                            <img src={arrow} style={{marginTop: "25px"}}/>
-                        </h2>
-                    </a>
-                </div>
-            </section>
+                </section>
 
             </div>
             <section class="how_it_works">
@@ -152,23 +151,27 @@ const Landing = ({history}) => {
                     </div>
                 </div>
             </section>
-            <h2 style={{fontSize:"30px",textAlign:"center",marginTop:"100px"}}>Start your business journey with Referl</h2>
-            <p style={{textAlign:"center"}}>Build the simplest and most rewarding referral program in 15 minutes.</p>
+            <h2 style={{fontSize: "30px", textAlign: "center", marginTop: "100px"}}>Start your business journey with
+                Referl</h2>
+            <p style={{textAlign: "center"}}>Build the simplest and most rewarding referral program in 15 minutes.</p>
             <section className="start_buiz">
                 <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)"}}>
                     <img src={purse}/>
                     <h2>5X ROI guarantee</h2>
-                    <p>Pick a pricing plan, and we guarantee you'll make at least 5x the monthly cost. If you don't, you'll get your money back, no questions asked.</p>
+                    <p>Pick a pricing plan, and we guarantee you'll make at least 5x the monthly cost. If you don't,
+                        you'll get your money back, no questions asked.</p>
                 </div>
-                <div className="feature" style={{background: "rgba(255, 224, 27, 0.5)",color:"black"}}>
+                <div className="feature" style={{background: "rgba(255, 224, 27, 0.5)", color: "black"}}>
                     <img src={shield}/>
                     <h2>Pay only when you earn</h2>
-                    <p style={{color:"#333"}}>Referral payouts to referrers happen only when they successfully send you customers.</p>
+                    <p style={{color: "#333"}}>Referral payouts to referrers happen only when they successfully send you
+                        customers.</p>
                 </div>
-                    <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)",}}>
+                <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)",}}>
                     <img src={kid}/>
                     <h2>Increase repeat & new visits</h2>
-                    <p>Stores with a referral program see a 140% increase in social media mentions, and a 33% lift in same-store footfall.</p>
+                    <p>Stores with a referral program see a 140% increase in social media mentions, and a 33% lift in
+                        same-store footfall.</p>
                 </div>
             </section>
             <section>
@@ -179,13 +182,13 @@ const Landing = ({history}) => {
                             <div class="card_h temp">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <b style={{color:"white"}}>FREE</b>
+                                        <b style={{color: "white"}}>FREE</b>
                                     </h5>
 
-                                    <p style={{color:"white"}}class="card-text">
-                                        <font >
+                                    <p style={{color: "white"}} class="card-text">
+                                        <font>
                                             {" "}
-                                            <sup>$</sup><b style={{fontSize:"70px",color:"white"}}>0</b>{" "}
+                                            <sup>$</sup><b style={{fontSize: "70px", color: "white"}}>0</b>{" "}
                                         </font>
                                         <sub>Forever</sub>
                                     </p>
@@ -210,7 +213,7 @@ const Landing = ({history}) => {
                                     <p class="card-text">
                                         <font size="70px">
                                             {" "}
-                                            <sup>$</sup><b style={{fontSize:"70px"}}>14</b>{" "}
+                                            <sup>$</sup><b style={{fontSize: "70px"}}>14</b>{" "}
                                         </font>
                                         <sub>per Month</sub>
                                     </p>
@@ -231,12 +234,9 @@ const Landing = ({history}) => {
                     </div>
                 </div>
             </section>
-                        <section class="footer">
-                <div class="lets_do">
-                    <h2>Let’s do this</h2>
-                </div>
+            <section class="footer">
                 <div class="res">
-                    <h3 style={{textAlign:"center"}}>Find and refere your favorite shops 💖</h3 >
+                    <h3 style={{textAlign: "center"}}>Find and refere your favorite shops 💖</h3>
                     <div class="shop_crd_list">
                         <div class="shop_crd">
                             <img
@@ -267,43 +267,43 @@ const Landing = ({history}) => {
                         </div>
                     </div>
                 </div>
-                 </section>
-                 <section className="contact">
-                    <div className="sect">
-                        <h2 style={{fontWeight:300}}>Referl</h2>
-                        <ul>
-                            <li>@Referl2021</li>
-                            <li>MADE WITH ♡ IN INDIA</li>
-                        </ul>
-                    </div>
-                    <div className="sect">
-                    </div>
-                    <div className="sect">
-                        <h2>Resources</h2>
-                            <ul>
-                            <li>Blogs</li>
-                            <li>Community</li>
-                            <li>Privacy policy</li>
-                            <li>Terms and conditions</li>
-                        </ul>
-                    </div>
-                    <div className="sect">
-                        <h2>Links</h2>
-                            <ul>
-                            <li>Login</li>
-                            <li>Signup</li>
-                            <li>Explore</li>
-                            </ul>
-                    </div>
-                    <div className="sect">
-                        <h2>Contact</h2>
-                        <ul>
-                            <li>Instagram</li>
-                            <li>Facebook</li>
-                            <li>Twitter</li>
-                            </ul>
-                    </div>
-                 </section>
+            </section>
+            <section className="contact">
+                <div className="sect">
+                    <h2 style={{fontWeight: 300}}>Referl</h2>
+                    <ul>
+                        <li>@Referl2021</li>
+                        <li>MADE WITH ♡ IN INDIA</li>
+                    </ul>
+                </div>
+                <div className="sect">
+                </div>
+                <div className="sect">
+                    <h2>Resources</h2>
+                    <ul>
+                        <li>Blogs</li>
+                        <li>Community</li>
+                        <li>Privacy policy</li>
+                        <li>Terms and conditions</li>
+                    </ul>
+                </div>
+                <div className="sect">
+                    <h2>Links</h2>
+                    <ul>
+                        <li>Login</li>
+                        <li>Signup</li>
+                        <li>Explore</li>
+                    </ul>
+                </div>
+                <div className="sect">
+                    <h2>Contact</h2>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+            </section>
         </React.Fragment>
     );
 };

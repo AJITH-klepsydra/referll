@@ -3,8 +3,8 @@ import {withRouter} from "react-router";
 import app from "./base.js";
 import {Link} from "react-router-dom";
 import firebase from "firebase/app";
-import avatar from "./assets/logo.jpeg";
-import "firebase/auth"; 
+import "firebase/auth";
+import 'firebase/database';
 import "./Login.css";
 import google from "./assets/google.svg";
 
@@ -39,6 +39,13 @@ const Login = ({history}) => {
                     .once("value")
                     .then((result) => {
                         if (!result.hasChild(res.user.uid)) {
+                            let verified_name = res.user.displayName.replace(".", "");
+                            verified_name = verified_name.replace("<", "&lt;");
+                            verified_name = verified_name.replace(">", "&gt;");
+                            verified_name = verified_name.replace("#", "");
+                            verified_name = verified_name.replace("$", "");
+                            verified_name = verified_name.replace("|", "");
+                            verified_name = verified_name.replace("^", "");
                             app
                                 .database()
                                 .ref("users")
@@ -46,7 +53,7 @@ const Login = ({history}) => {
                                 .child(res.user.uid)
                                 .set({
                                     is_completed: false,
-                                    full_name: res.user.displayName,
+                                    full_name: verified_name,
                                 });
                             history.push("/influencerdetails");
                         } else {
@@ -80,7 +87,7 @@ const Login = ({history}) => {
                     .auth()
                     .signInWithEmailAndPassword(email.value, password.value);
                 firebase.auth().onAuthStateChanged((user) => {
-                    
+
                     app
                         .database()
                         .ref("users")
@@ -107,15 +114,15 @@ const Login = ({history}) => {
     return (
         <React.Fragment>
 
-            <form class="myform_m"onSubmit={handleLogin}>
+            <form class="myform_m" onSubmit={handleLogin}>
 
                 <div className="container_m">
-                <h2 className="form_head">Welcome to Referl!</h2>
-                <p className="form_subhead">Login to your account</p>
-                <button className="new loged" onClick={signInWithGoogle}>
-                  <img src={google} width="32px"/><a>Sign in with google</a>
-                </button>
-                <p className="myform_p">Or sign in with your email</p>
+                    <h2 className="form_head">Welcome to Referl!</h2>
+                    <p className="form_subhead">Login to your account</p>
+                    <button className="new loged" onClick={signInWithGoogle}>
+                        <img src={google} width="32px"/><a>Sign in with google</a>
+                    </button>
+                    <p className="myform_p">Or sign in with your email</p>
                     <input
                         className="my_input_m"
                         type="text"
@@ -139,9 +146,9 @@ const Login = ({history}) => {
                     </button>
 
                 </div>
-                   <p className="text_p">Don't have an account?   <Link className="linked" to="/signup">SignUp</Link>{""}</p>    
-                   
-                
+                <p className="text_p">Don't have an account? <Link className="linked" to="/signup">SignUp</Link>{""}</p>
+
+
             </form>
         </React.Fragment>
     );
