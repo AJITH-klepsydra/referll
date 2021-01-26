@@ -1,0 +1,93 @@
+.row {
+    display: flex;
+    width: 75%;
+    margin: auto;
+    flex-direction: row;
+}
+
+hr {
+    width: 75%;
+    margin: auto;
+}
+
+.row input {
+    width: 25vw;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 2px 2px 5px #888888;
+    outline: none;
+    padding: 10px;
+    margin: 0 20px 20px 40px;
+}
+
+.done {
+    background: #2f80ed;
+    border: 1px solid #2f80ed;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    outline: none;
+    margin-left: 8vw;
+    margin-top: 10px;
+}
+
+.done:hover {
+    opacity: 0.7;
+}
+
+.prof_title {
+    margin: 50px;
+}
+
+label {
+    padding: 0;
+    margin: 50px 0 0;
+    font-style: italic;
+    color: #d0312d;
+    opacity: 0.5;
+}
+
+.myform {
+    width: 100vw;
+    border: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .row input {
+        width: 70vw;
+        margin: 10px 10px 10px 0;
+    }
+
+    .done {
+        margin-left: 13vw;
+    }
+}
+
+.snackbar {
+    background-color: #222;
+    padding: 10px;
+    color: white;
+    position: fixed;
+    border-radius: 5px;
+    bottom: 5px;
+    display: flex;
+    font-size: 15px;
+    margin: 15px;
+}
+
+.empty {
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+
+.nothing {
+    display: none;
+}

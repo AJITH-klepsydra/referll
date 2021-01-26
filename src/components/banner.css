@@ -1,0 +1,650 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+    --color: rgba(47, 135, 71, 0.08);
+    --transition-time: 0.5s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.main_container {
+    height: 45vh;
+    width: 100vw;
+    background: rgba(0, 166, 152, 0.72);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.banner {
+
+
+    height: 50px;
+    display: flex;
+    padding-top: 3px;
+}
+
+.banner img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.banner p {
+    color: white;
+    font-size: 20px;
+    padding-left: 2px;
+}
+
+.stats {
+    width: 50%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+
+.card_div {
+    margin-top: 0;
+    margin-left: 50px;
+    width: 50%;
+    background-color: white;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.first_row {
+    display: flex;
+}
+
+.card-text {
+    padding-left: 2%;
+}
+
+.first_row img {
+    padding-left: 12%;
+    width: 45px;
+}
+
+.card-text p {
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.card-text b {
+    font-size: 40px;
+    color: black;
+    padding: 0px;
+    margin: 0px;
+}
+
+.status-text {
+    padding-left: 2%;
+    color: rgba(0, 0, 0, 0.7);
+    padding-top: 2%;
+}
+
+.generate {
+    height: 25px;
+    position: absolute;
+    background-color: #ff6961;
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+    right: 70px;
+    margin-top: 35vh;
+    transition: background-color 0.1s;
+}
+
+.generate:hover {
+    background-color: #e3242b;
+}
+
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#loginScreen {
+    height: 80%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    position: fixed;
+    z-index: 10;
+    display: none;
+    background-color: white;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+#loginScreen:target,
+#loginScreen:target + #cover {
+    display: block;
+    opacity: 2;
+}
+
+.cancel {
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    background: rgb(245, 245, 245);
+    color: black;
+    height: 30px;
+    width: 35px;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+#loginScreen h1 {
+    text-align: center;
+}
+
+.title {
+    padding-top: 20px;
+    font-size: 30px;
+    color: #777777;
+}
+
+#loginScreen input {
+
+    
+    width: 40vw;
+    height: 5vh;
+    font-size: 15px;
+    color: grey;
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow var(--transitionDuration);
+    outline: none;
+
+    text-align: center;
+
+}
+
+#loginScreen input:focus {
+    outline: none;
+    
+}
+
+#loginScreen input::placeholder {
+    color: #b0bec5;
+}
+
+.shops {
+    width: 60vw;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.card2 {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    border:0.01px solid #555;
+    border-radius: 5px;
+
+    padding: 15px;
+    margin-top: 10px;
+   
+    
+
+}
+
+.card_imag {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.card2 h4 {
+    padding: 15px;
+    margin:0;
+}
+
+.card2 p {
+    padding: 15px;
+    margin:0;
+}
+
+.example_e {
+    border: none;
+    background: #043927;
+    color: #ffffff !important;
+    border-radius: 2px;
+    font-weight: 100;
+    padding: 10px;
+
+    display: inline-block;
+    margin: 20px;
+    transition: all 0.3s ease 0s;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.example_e:hover {
+    color: #404040 !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.3s ease 0s;
+}
+
+a {
+    color: inherit;
+}
+
+.cards-wrapper {
+}
+
+.card {
+    --bg-filter-opacity: 0.5;
+
+    height: 30vh;
+    width: 20vw;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 5px;
+    /*margin: 2em;*/
+
+    align-items: flex-end;
+
+    transition: all, var(--transition-time);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    margin: 0;
+    margin-top: 2vw;
+    margin-left: 35vw;
+}
+
+
+
+.card h1 {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 0px;
+}
+
+.card p {
+    font-size: 15px;
+    margin-top: 0.5em;
+    text-align: center;
+    color: #999;
+}
+
+.card .tags {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.card .tags .tag {
+    font-size: 0.75em;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all, var(--transition-time);
+}
+
+.card:hover .tags .tag {
+    background: var(--color);
+    color: white;
+}
+
+.card .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.5em;
+    padding: 1em;
+    line-height: 1em;
+    opacity: 0.8;
+}
+
+.card:before,
+.card:after {
+    content: "";
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all, var(--transition-time);
+    transition-timing-function: ease-in-out;
+}
+
+.card:before {
+    background: #ddd;
+    width: 250%;
+    height: 250%;
+}
+
+.card:after {
+    background: #ffffff;
+    width: 200%;
+    height: 200%;
+}
+
+.card:hover .date {
+    color: #ffffff;
+}
+
+.card:hover:before,
+.card:hover:after {
+    transform: scale(1);
+}
+
+.card-grid-space .num {
+    font-size: 3em;
+    margin-bottom: 1.2rem;
+    margin-left: 1rem;
+}
+
+.info {
+    font-size: 1.2em;
+    display: flex;
+    padding: 1em 3em;
+    height: 3em;
+}
+
+.card:hover .nm {
+    color: black;
+}
+
+.info img {
+    height: 3em;
+    margin-right: 0.5em;
+}
+
+.info h1 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.pay {
+    position: relative;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.logout_icon {
+    width: 1vw;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.top_first{
+    position: absolute;
+    display: flex;
+    right: 60px;
+}
+@media only screen and (max-width: 600px) {
+    .card2 h4{
+        font-size: 12px;
+    }
+    .card2 p{
+        font-size: 12px;
+    }
+    .logout_icon {
+        
+    }
+
+    .main_container {
+    }
+
+    .banner {
+        
+
+        
+    }
+
+    .banner img {
+        width: 40px;
+        height: 40px;
+        padding: 0px;
+    }
+
+    .banner p {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .stats {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .the_list p {
+        font-size: 5px;
+    }
+
+    .generate {
+        right: 30px;
+        padding: 5px;
+    }
+
+    #loginScreen input {
+        
+        height: 5vh;
+        margin-left: 0;
+    }
+
+    .shops {
+        width: 75%;
+        padding: 10px;
+        margin:auto;
+    }
+
+
+
+
+    .offer h1 {
+        font-size: 20px;
+    }
+
+    .offer b {
+        font-size: 10px;
+    }
+
+    #offer_list {
+        width: 100%;
+    }
+
+    .offer {
+        margin: 5px;
+    }
+
+    .card {
+        width: 70vw;
+        margin-left: 10vw;
+    }
+}
+
+.toolbar {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.btext {
+    text-align: center;
+    padding: 25px;
+    font-size: 20px;
+}
+
+.info_del {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .card2{
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .banner p {
+        font-size: 15px;
+        padding-top: 5px;
+    }
+
+    .stats {
+        width: 100%;
+        padding: 0;
+    }
+
+    .stats {
+        width: 70%;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        padding-left: 20px;
+    }
+
+    .the_list p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .banner {
+
+    }
+
+    .stats {
+        width: 80%;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card_div {
+        margin-top: 0;
+        margin-left: 10px;
+        width: 50%;
+        background-color: white;
+        border: 1px solid #ffffff;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+        padding: 10px;
+    }
+
+    .card-text p {
+        font-size: 17px;
+        line-height: 23px;
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    .card-text b {
+        font-size: 25px;
+        color: black;
+        padding: 0;
+        margin: 0;
+    }
+
+    .status-text {
+        font-size: 15px;
+        padding-left: 2%;
+        color: rgba(0, 0, 0, 0.7);
+        padding-top: 2%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .banner p {
+        font-size: 12px;
+        padding-top: 5px;
+    }
+
+    .stats {
+        width: 90%;
+        margin-top: 25px;
+    }
+
+    .the_list p {
+        font-size: 15px;
+    }
+
+    .card-text p {
+        font-size: 13px;
+    }
+
+    .card-text b {
+        font-size: 20px;
+    }
+
+    .first_row img {
+        width: 25px;
+    }
+
+    .status-text {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .the_list p {
+        font-size: 13px;
+    }
+
+    .banner p {
+        color: white;
+        font-size: 10px;
+    }
+
+    .banner {
+    
+    }
+}
+
+.snackbar {
+    background-color: #222;
+    padding: 10px;
+    color: white;
+    position: fixed;
+    border-radius: 5px;
+    bottom: 5px;
+    display: flex;
+    font-size: 15px;
+    margin: 15px;
+}
+
+.empty {
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+
+.nothing {
+    display: none;
+}
