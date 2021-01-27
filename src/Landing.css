@@ -186,7 +186,7 @@
 .arr {
     text-align: center;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /*HOW IT WORKS*/
@@ -214,7 +214,7 @@
 
 .ticket_cont h2 {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 400;
     align-items: center;
 
     color: #000000;
@@ -343,7 +343,7 @@
 .container h2 {
     text-align: center;
     color: black;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 30px;
     padding-top: 70px;
 }
@@ -430,7 +430,7 @@
     font-size: 27px;
 
     color: white;
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 12px;
     margin: 20px;
     border: 0px;

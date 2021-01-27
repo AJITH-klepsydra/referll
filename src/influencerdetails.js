@@ -67,12 +67,13 @@ const InfDetails = ({history}) => {
 
     return (
         <React.Fragment>
-            <section id="status_msg" className="nothing"></section>
+            <section id="status_msg" style={{bottom: "25px"}} className="nothing"></section>
             <form class="myform" id="MyForm" onSubmit={handleDetails}>
                 <section class="profile">
                     <p class="prof_title">
                         SOCIAL MEDIA PROFILES
-                        <br/> <label>*Fill atleast any two of the below platforms </label>
+                        <br/>
+                        <label style={{padding: "0", margin: "0"}}>*Fill at least two of the below platforms</label>
                     </p>
 
                     <div class="row">
@@ -87,26 +88,26 @@ const InfDetails = ({history}) => {
                     <div class="row">
                         <input
                             type="text"
-                            placeholder="youtube channel name"
+                            placeholder="Youtube Channel Name"
                             name="youtube"
                             id="youtube"
                         />
-                        <input type="text" placeholder="Twitter username" name="twitter" id="twitter"/>
+                        <input type="text" placeholder="Twitter Username" name="twitter" id="twitter"/>
                     </div>
 
                     <hr/>
                     <p class="prof_title">
                         PAYMENT HANDLES <br/>
-                        <label>*Fill atleast any two of the below platforms </label>
+                        <label style={{padding: "0", margin: "0"}}>*Fill at least two of the below platforms </label>
                     </p>
 
                     <div class="row">
                         <input type="text" placeholder="Google Pay number" name="gpay" id="gpay"/>
-                        <input type="text" placeholder="Phone pay number" name="phonepay" id="phonepay"/>
+                        <input type="text" placeholder="PhonePe number" name="phonepay" id="phonepay"/>
                     </div>
                     <div class="row">
-                        <input type="text" placeholder="Paytm number" name="paytm" id="paytm"/>
-                        <input type="text" placeholder="Upi id" name="upi" id="upi"/>
+                        <input type="text" placeholder="Pay TM number" name="paytm" id="paytm"/>
+                        <input type="text" placeholder="UPI Id" name="upi" id="upi"/>
                     </div>
                     <button class="done" onSubmit={handleDetails}>Done</button>
                 </section>
@@ -169,11 +170,11 @@ function CheckDetails() {
     }
 
     if (submitOk1 > 2) {
-        push_status(0, "Submit atleast 2 socials");
+        push_status(0, "Submit at least 2 socials");
         return false
 
     } else if (submitOk2 > 2) {
-        push_status(0, "Submit atleast 2 payment handles");
+        push_status(0, "Submit at least 2 payment handles");
         return false;
     } else {
         return true;
