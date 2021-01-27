@@ -11,8 +11,12 @@ import Owner from "./Owner";
 import Influencer from "./Influencer";
 import InfDetails from "./influencerdetails";
 import NotFound from "./NoteFound";
+import AOS from 'aos';
 
 const App = () => {
+    AOS.init({
+        duration: 1200,
+    })
     return (
         <AuthProvider>
             <Router>

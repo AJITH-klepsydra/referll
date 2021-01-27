@@ -5,9 +5,11 @@
   "dependencies": {
     "@react-firebase/auth": "^0.2.10",
     "@react-firebase/database": "^0.3.11",
+    "aos": "^2.3.4",
     "bootstrap": "^4.6.0",
     "firebase": "^8.2.3",
     "react": "^16.8.6",
+    "react-aos": "^1.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",

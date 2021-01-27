@@ -16,9 +16,7 @@ import 'firebase/auth';
 import 'firebase/database';
 import app from "./base";
 
-
 const Landing = ({history}) => {
-
     const user = firebase.auth().currentUser
     if (user) {
         app
@@ -48,7 +46,7 @@ const Landing = ({history}) => {
 
     return (
         <React.Fragment>
-            <div className="main_hero">
+            <div className="main_hero" data-aos="fade-up">
                 <div className="topnav" id="myTopnav">
                     <div className="bar_buts">
                         <a href="#home" className="active ">
@@ -98,7 +96,7 @@ const Landing = ({history}) => {
                 </section>
 
             </div>
-            <section class="how_it_works">
+            <section class="how_it_works" data-aos="fade-up">
                 <a name="start"/>
                 <div class="ticket">
                     <div class="tick_img">
@@ -151,9 +149,13 @@ const Landing = ({history}) => {
                     </div>
                 </div>
             </section>
-            <h2 style={{fontSize: "30px", textAlign: "center", marginTop: "100px"}}>Start your business journey with
+            <h2 style={{fontSize: "30px", textAlign: "center", marginTop: "100px", fontWeight: "600"}}>Start your
+                business
+                journey with
                 Referl</h2>
-            <p style={{textAlign: "center"}}>Build the simplest and most rewarding referral program in 15 minutes.</p>
+            <p style={{textAlign: "center", padding: "7px"}}>Build the simplest and most rewarding referral program in
+                15
+                minutes.</p>
             <section className="start_buiz">
                 <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)"}}>
                     <img src={purse}/>

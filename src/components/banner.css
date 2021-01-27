@@ -34,6 +34,7 @@ a {
 .banner img {
     width: 60px;
     border-radius: 50%;
+    padding-right: 8px;
 }
 
 .banner p {
@@ -167,7 +168,7 @@ a {
 
 #loginScreen input {
 
-    
+
     width: 40vw;
     height: 5vh;
     font-size: 15px;
@@ -183,7 +184,7 @@ a {
 
 #loginScreen input:focus {
     outline: none;
-    
+
 }
 
 #loginScreen input::placeholder {
@@ -202,13 +203,12 @@ a {
     display: flex;
     text-align: center;
     justify-content: space-between;
-    border:0.01px solid #555;
+    border: 0.01px solid #555;
     border-radius: 5px;
 
     padding: 15px;
     margin-top: 10px;
-   
-    
+
 
 }
 
@@ -221,12 +221,12 @@ a {
 
 .card2 h4 {
     padding: 15px;
-    margin:0;
+    margin: 0;
 }
 
 .card2 p {
     padding: 15px;
-    margin:0;
+    margin: 0;
 }
 
 .example_e {
@@ -281,7 +281,6 @@ a {
     margin-top: 2vw;
     margin-left: 35vw;
 }
-
 
 
 .card h1 {
@@ -403,31 +402,36 @@ a {
     width: 1vw;
     position: absolute;
     right: 0;
+    border-radius: 0;
+    top: 10px;
     cursor: pointer;
 }
-.top_first{
+
+.top_first {
     position: absolute;
     display: flex;
-    right: 60px;
+    right: 80px;
 }
+
 @media only screen and (max-width: 600px) {
-    .card2 h4{
+    .card2 h4 {
         font-size: 12px;
     }
-    .card2 p{
+
+    .card2 p {
         font-size: 12px;
     }
+
     .logout_icon {
-        
+
     }
 
     .main_container {
     }
 
     .banner {
-        
 
-        
+
     }
 
     .banner img {
@@ -456,7 +460,7 @@ a {
     }
 
     #loginScreen input {
-        
+
         height: 5vh;
         margin-left: 0;
     }
@@ -464,10 +468,8 @@ a {
     .shops {
         width: 75%;
         padding: 10px;
-        margin:auto;
+        margin: auto;
     }
-
-
 
 
     .offer h1 {
@@ -510,10 +512,11 @@ a {
 
 @media only screen and (max-width: 800px) {
 
-    .card2{
+    .card2 {
         width: 100%;
         overflow-x: scroll;
     }
+
     .banner p {
         font-size: 15px;
         padding-top: 5px;
@@ -624,7 +627,7 @@ a {
     }
 
     .banner {
-    
+
     }
 }
 
