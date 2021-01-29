@@ -10,6 +10,7 @@ import arrow from "./assets/arrow.svg";
 import prs from "./assets/prs.svg";
 import purse from "./assets/purse.svg";
 import shield from "./assets/shield.svg";
+import down from "./assets/down.svg";
 import kid from "./assets/kid.svg";
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -73,6 +74,7 @@ const Landing = ({history}) => {
                                 Reward your customers for referring their friends and followers to
                                 your shops.
                             </p>
+                            <br/>
                             <div className="actions_buts">
                                 <button><a><Link to="/login">Start earning</Link>{" "}</a></button>
                                 <button style={{color: "black", backgroundColor: "white"}}> Boost your business</button>
@@ -82,19 +84,10 @@ const Landing = ({history}) => {
                             <img src={hero}/>
                         </div>
                     </div>
-                </div>
-                <section class="arrow">
-                    <div class="how">
-                        <a class="start" href="#start">
-                            <h2 class="arr">
-                                How it works
-                                <br/>
-                                <img src={arrow} style={{marginTop: "25px"}}/>
-                            </h2>
-                        </a>
-                    </div>
-                </section>
 
+                </div>
+
+                <a href="#start"><img src={down} style={{width:"35px",position:"absolute",right:"10px",bottom:"10px"}}/></a>
             </div>
             <section class="how_it_works" data-aos="fade-up">
                 <a name="start"/>
@@ -109,7 +102,7 @@ const Landing = ({history}) => {
                         <p>And the referral reward for a successful referral</p>
                     </div>
                 </div>
-
+                <hr style={{marginTop:"10vh",border:"0.5px solid orange",width:"50%",marginLeft:"0"}}/>
                 <div class="ticket rev">
                     <div class="tick_img">
                         <img src={ban}/>
@@ -122,7 +115,7 @@ const Landing = ({history}) => {
                         </p>
                     </div>
                 </div>
-
+                <hr style={{marginTop:"10vh",border:"0.5px solid #4ABC96",color:"#777",width:"50%",marginLeft:"50%"}}/>
                 <div class="ticket">
                     <div class="tick_img">
                         <img src={horn}/>
@@ -134,6 +127,7 @@ const Landing = ({history}) => {
                         <p>- Walk into your store to redeem the deal</p>
                     </div>
                 </div>
+                <hr style={{marginTop:"10vh",border:"0.5px solid #FFDE59",color:"#777",width:"50%",marginLeft:"0",}}/>
                 <div class="ticket rev">
                     <div class="tick_img">
                         <img src={prs}/>
@@ -143,33 +137,34 @@ const Landing = ({history}) => {
                         <p>
                             To redeem
                             <br/>- They show the social media profile of the referrer to the
-                            staff.<br/><br/> -The staff scans the profile shown with the Kaching
+                            staff.<br/> -The staff scans the profile shown with the Kaching
                             Referral Scanner App.
                         </p>
                     </div>
                 </div>
+                <hr style={{marginTop:"10vh",marginLeft:"50%",border:"0.5px solid #63BD6E",width:"50%"}}/>
             </section>
-            <h2 style={{fontSize: "30px", textAlign: "center", marginTop: "100px", fontWeight: "600"}}>Start your
+            <h2 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px", fontWeight: "500"}}>Start your
                 business
                 journey with
                 Referl</h2>
-            <p style={{textAlign: "center", padding: "7px"}}>Build the simplest and most rewarding referral program in
+            <p style={{textAlign: "center", padding: "7px",fontSize:"20px",color: "#d3e3fc",lineHeight:"30px"}}>Build the simplest and most rewarding referral program in
                 15
                 minutes.</p>
             <section className="start_buiz">
-                <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)"}}>
+                <div className="feature" style={{background: "#77A6F6"}}>
                     <img src={purse}/>
                     <h2>5X ROI guarantee</h2>
                     <p>Pick a pricing plan, and we guarantee you'll make at least 5x the monthly cost. If you don't,
                         you'll get your money back, no questions asked.</p>
                 </div>
-                <div className="feature" style={{background: "rgba(255, 224, 27, 0.5)", color: "black"}}>
+                <div className="feature" style={{background: "#D3E3FC", color: "black"}}>
                     <img src={shield}/>
                     <h2>Pay only when you earn</h2>
                     <p style={{color: "#333"}}>Referral payouts to referrers happen only when they successfully send you
                         customers.</p>
                 </div>
-                <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)",}}>
+                <div className="feature" style={{background: "#FC5554",}}>
                     <img src={kid}/>
                     <h2>Increase repeat & new visits</h2>
                     <p>Stores with a referral program see a 140% increase in social media mentions, and a 33% lift in
@@ -178,7 +173,7 @@ const Landing = ({history}) => {
             </section>
             <section>
                 <div class="container">
-                    <h2>Optional: Go Pro!</h2>
+                    <h2 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px", fontWeight: "500"}}>Optional: Go Pro!</h2>
                     <div class="package">
                         <div class="price">
                             <div class="card_h temp">
@@ -200,9 +195,9 @@ const Landing = ({history}) => {
                                 </div>
                             </div>
                             <ul class="feat_set">
-                                <li><b style={{color: "#00A698"}}>✔</b> Unlimited Referrals</li>
-                                <li><b style={{color: "#00A698"}}>✔</b> Sleek Dashboard</li>
-                                <li><b style={{color: "#00A698"}}>✔</b> 2-click in-store app</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Unlimited Referrals</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Sleek Dashboard</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> 2-click in-store app</li>
                             </ul>
                         </div>
                         <div class="price">
@@ -225,12 +220,12 @@ const Landing = ({history}) => {
                                 </div>
                             </div>
                             <ul class="feat_set">
-                                <li><b style={{color: "#00A698"}}>✔</b>Unlimited Referrals</li>
-                                <li><b style={{color: "#00A698"}}>✔</b> Sleek Dashboard</li>
-                                <li><b style={{color: "#00A698"}}>✔</b> 2-click in-store app</li>
-                                <li><b style={{color: "#00A698"}}>✔</b> In-store marketing assets</li>
-                                <li><b style={{color: "#00A698"}}>✔</b> Data export to CSV</li>
-                                <li><b style={{color: "#00A698"}}>✔</b> 5x ROI Guarantee</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b>Unlimited Referrals</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Sleek Dashboard</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> 2-click in-store app</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> In-store marketing assets</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Data export to CSV</li>
+                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> 5x ROI Guarantee</li>
                             </ul>
                         </div>
                     </div>
@@ -238,34 +233,34 @@ const Landing = ({history}) => {
             </section>
             <section class="footer">
                 <div class="res">
-                    <h3 style={{textAlign: "center"}}>Find and refere your favorite shops 💖</h3>
+                    <h3 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px", fontWeight: "500"}}>Find and refere your favorite shops 💖</h3>
                     <div class="shop_crd_list">
                         <div class="shop_crd">
                             <img
                                 src="https://www.freepnglogos.com/uploads/mcdonalds-png-logo/mcdonalds-circle-logo-png-25.png"/>
                             <h4>McDonald’s</h4>
                             <p>Kakkanad</p>
-                            <button class="refere">♡ Refere</button>
+                            <button class="refere">♡ Refer</button>
                         </div>
                         <div class="shop_crd rose">
                             <img src="https://logodownload.org/wp-content/uploads/2017/10/Starbucks-logo.png"/>
                             <h4>Starbucks</h4>
                             <p>Lulu</p>
-                            <button class="refere">♡ Refere</button>
+                            <button class="refere">♡ Refer</button>
                         </div>
                         <div class="shop_crd rose">
                             <img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/The-Body-Shop-Logo.svg/300px-The-Body-Shop-Logo.svg.png"/>
                             <h4>body shop</h4>
                             <p>Lulu</p>
-                            <button class="refere">♡ Refere</button>
+                            <button class="refere">♡ Refer</button>
                         </div>
                         <div class="shop_crd">
                             <img
                                 src="https://upload.wikimedia.org/wikipedia/sco/thumb/b/bf/KFC_logo.svg/1200px-KFC_logo.svg.png"/>
                             <h4>KFC</h4>
                             <p>calicut</p>
-                            <button class="refere">♡ Refere</button>
+                            <button class="refere">♡ Refer</button>
                         </div>
                     </div>
                 </div>
