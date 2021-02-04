@@ -8,6 +8,7 @@ import share from "./banner-assets/share_square.svg";
 import shop from "./banner-assets/shop.jpg";
 import logout from "./banner-assets/logout.svg";
 import user from "./banner-assets/user.svg";
+import search from "./banner-assets/search.svg";
 
 let Arr = [];
 
@@ -20,7 +21,6 @@ function push_status(status_code, message) {
     p.innerHTML = message;
 
     if (status_code === 0) {
-        console.log(message);
         let b = document.createElement("b");
         b.innerHTML = "ERROR: ";
         b.style.color = "red";
@@ -39,6 +39,7 @@ function push_status(status_code, message) {
 }
 
 function shop_selection(e) {
+    document.getElementById("card-box").className = "info_del";
     const v = e.target.value.toLowerCase();
 
     let list = [];
@@ -103,7 +104,6 @@ function request_existing_check() {
     const user = firebase.auth().currentUser;
     const ref = app.database().ref("shops").child(Arr["uid"]).child("requests");
     ref.get().then((result) => {
-        console.log(result.val());
         if (!result.hasChild(user.uid)) {
             make_request();
         } else {
@@ -111,7 +111,6 @@ function request_existing_check() {
                 .child(user.uid)
                 .get()
                 .then((res) => {
-                    console.log(res.val());
                     if (
                         res.val()["description"] ===
                         Arr["details"]["current_offer"]["description"] &&
@@ -159,9 +158,9 @@ function make_request() {
 }
 
 function visualiser(data) {
+
     document.getElementById("shop_list").innerHTML = "";
     if (data != null) {
-        console.log(data);
         for (let i = 0; i < data.length; i++) {
             if (data[i]["details"].hasOwnProperty("current_offer")) {
                 let a = document.createElement("a");
@@ -179,11 +178,7 @@ function visualiser(data) {
                     document.getElementById("shp").innerHTML = data[i]["name"];
                     document.getElementById("cat").innerHTML =
                         data[i]["details"]["shop_category"];
-                    document.getElementById("card").style.background =
-                        "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1))," +
-                        "url(" +
-                        shop +
-                        ")";
+                    document.getElementById("card").style.background = "#043927";
                     document.getElementById("card-box").className = "cards-wrapper";
                     document.getElementById("loginScreen").scrollTo(0, document.body.scrollHeight);
                 };
@@ -263,53 +258,88 @@ const Banner = () => {
                 <a href="#" className="cancel">
                     ×
                 </a>
-                <h1 className="title">Find your shop</h1>
-                <input
-                    className="input"
-                    style={{marginLeft: '0', backgroundColor: "white", border: "1px solid black"}}
-                    placeholder="search..."
-                    type="text"
-                    onInput={(e) => {
-                        shop_selection(e);
-                    }}
-                    id="shop"
-                    name=""
-                />
-                <div className="shops" id="shop_list"></div>
-                <a name="Offer"/>
-                <section className="info_del" id="card-box">
-                    <div className="card-grid-space">
-                        <div className="card" id="card" href="">
-                            <p className="pay" id="pay">
-                                Payout: 750
-                            </p>
-                            <h1 id="nm">Mega offer</h1>
-                            <p id="desc">
-                                Lorem ipsum elit exercitation sint adipisicing consectetur velit
-                                amet voluptate nulla.
-                            </p>
-                            <div className="date" id="date">
-                                6 Oct 2017
-                            </div>
-                            <div className="tags">
-                                <div className="tag" id="shp">
-                                    Krishna
+                <div className="the_wrapper">
+                    <h1 style={{textAlign: "left", marginBottom: "0"}}>Find your shop</h1>
+                    <p style={{textAlign: "left",}}>submit after offer verification</p>
+                    <div style={{
+                        borderRadius: "5px",
+                        padding: "10px",
+                        display: "flex",
+                        background: "#2F80ED",
+                        maxHeight: "5vh"
+                    }}>
+                        <img src={search} style={{width: "20px"}}/>
+                        <input
+
+                            style={{
+                                background: "#2F80ED",
+                                outline: "none",
+                                border: "0",
+                                marginLeft: "1vw",
+                                color: "white"
+                            }}
+                            placeholder="search..."
+                            type="text"
+                            onInput={(e) => {
+                                shop_selection(e);
+                            }}
+                            id="shop"
+                            name=""
+                        />
+                    </div>
+                    <div className="shops" id="shop_list"></div>
+                    <a name="Offer"/>
+                    <section className="info_del" id="card-box" style={{margin: "0"}}>
+                        <div className="card-grid-space">
+                            <div className="offer_card" id="card" href="" style={{color: "white", borderRadius: "5px"}}>
+                                <p className="pay" id="pay">
+                                    Payout: 750
+                                </p>
+                                <h1 id="nm">Mega offer</h1>
+                                <p id="desc">
+                                    Lorem ipsum elit exercitation sint adipisicing consectetur velit
+                                    amet voluptate nulla.
+                                </p>
+                                <div className="date" id="date" style={{fontStyle: "italics", fontSize: "10px"}}>
+                                    6 Oct 2017
                                 </div>
-                                <div className="tag" id="cat">
-                                    restaurant
+                                <div className="tags" style={{display: "flex"}}>
+                                    <div className="tag" id="shp" style={{
+                                        marginLeft: "10px",
+                                        padding: "5px",
+                                        background: "#044",
+                                        borderRadius: "2px"
+                                    }}>
+                                        Krishna
+                                    </div>
+                                    <div className="tag" id="cat" style={{
+                                        marginLeft: "10px",
+                                        padding: "5px",
+                                        background: "#045",
+                                        borderRadius: "2px"
+                                    }}>
+                                        restaurant
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <div className="button_cont" align="center">
-                    <a onClick={sentRequest} className="example_e" href="#">
-                        Submit
-                    </a>
+                    <div className="" align="center" style={{
+                        background: "#FF781F",
+                        width: "95%",
+                        marginTop: "10px",
+                        padding: "2%",
+                        borderRadius: "5px",
+                        color: "white",
+                        marginBottom: "25px"
+                    }}>
+                        <a onClick={sentRequest} className="" href="#">
+                            Submit
+                        </a>
+                    </div>
                 </div>
             </div>
-
             <div id="cover"></div>
 
 
@@ -317,20 +347,9 @@ const Banner = () => {
                 <div className="top_first">
                     <img src={user}/>
                     <br/>
-                    <p>{name}</p>
+                    <p onClick={() => app.auth().signOut()} style={{paddingLeft: "10px", cursor: "pointer"}}>{name}</p>
                 </div>
-                <p onClick={() => app.auth().signOut()}>
-                    <img className="logout_icon"
-                         style={{
-                             position: "absolute",
-                             right: "10px",
-                             top: "10px",
-                             width: "40px",
 
-                         }}
-                         src={logout}
-                    />
-                </p>
             </section>
             <section className="toolbar">
                 <section className="stats">

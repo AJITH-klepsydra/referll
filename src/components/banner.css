@@ -19,7 +19,7 @@ a {
 .main_container {
     height: 45vh;
     width: 100vw;
-    background: #77a6f7;
+    background: #77A6F7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -32,7 +32,7 @@ a {
 }
 
 .banner img {
-    width: 60px;
+    width: 40px;
     border-radius: 50%;
     padding-right: 8px;
 }
@@ -97,7 +97,7 @@ a {
 .generate {
     height: 25px;
     position: absolute;
-    background: #00887a;
+    background-color: #00887A;
     padding: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -108,7 +108,7 @@ a {
 }
 
 .generate:hover {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 #cover {
@@ -166,21 +166,7 @@ a {
     color: #777777;
 }
 
-#loginScreen input {
 
-
-    width: 40vw;
-    height: 5vh;
-    font-size: 15px;
-    color: grey;
-    border: none;
-    border-radius: 0.4rem;
-    transition: box-shadow var(--transitionDuration);
-    outline: none;
-
-    text-align: center;
-
-}
 
 #loginScreen input:focus {
     outline: none;
@@ -190,12 +176,24 @@ a {
 #loginScreen input::placeholder {
     color: #b0bec5;
 }
+.the_wrapper{
+    width:40%;
+    margin:auto;
+}
+@media only screen and (max-width: 600px) {
+    .the_wrapper{
+    width:80%;
+    margin:auto;
+}
+}
+.offer_card{
+    background-color: white;
+    color: black;
+}
 
 .shops {
-    width: 60vw;
-    margin: auto;
+
     margin-top: 25px;
-    margin-bottom: 25px;
     text-align: center;
 }
 
@@ -203,13 +201,16 @@ a {
     display: flex;
     text-align: center;
     justify-content: space-between;
-    border: 0.01px solid #555;
+    border: 1px solid #555;
     border-radius: 5px;
 
     padding: 15px;
     margin-top: 10px;
 
 
+}
+.card2:hover{
+    opacity: 0.5;
 }
 
 .card_imag {
@@ -393,7 +394,7 @@ a {
 .pay {
     position: relative;
     padding: 10px;
-    background-color: black;
+    background-color: #044;
     color: white;
     font-weight: bold;
 }
@@ -410,10 +411,16 @@ a {
 .top_first {
     position: absolute;
     display: flex;
-    right: 80px;
+    right: 25px;
 }
 
 @media only screen and (max-width: 600px) {
+    .the_list p {
+        font-size: 10px;
+    }
+    .card2 img{
+        width: 10px;
+    }
     .card2 h4 {
         font-size: 12px;
     }
@@ -427,7 +434,6 @@ a {
     }
 
     .main_container {
-        background: #77a6f7;
     }
 
     .banner {
@@ -458,6 +464,7 @@ a {
     .generate {
         right: 30px;
         padding: 5px;
+
     }
 
     #loginScreen input {
@@ -467,9 +474,7 @@ a {
     }
 
     .shops {
-        width: 75%;
-        padding: 10px;
-        margin: auto;
+
     }
 
 
@@ -514,8 +519,8 @@ a {
 @media only screen and (max-width: 800px) {
 
     .card2 {
-        width: 100%;
         overflow-x: scroll;
+        padding: 5px;
     }
 
     .banner p {
