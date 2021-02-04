@@ -6,6 +6,7 @@
 }
 
 .topnav {
+
     overflow: hidden;
 
 }
@@ -160,6 +161,7 @@
 }
 
 .actions_buts button {
+    background: #00837a;
     background: #00887a;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -254,16 +256,17 @@
 .feature {
     width: 33.33%;
     margin-top: 25px;
-    border-radius: 5px;
+
+    border-radius: 10px ;
     margin: 20px;
     text-align: center;
     color: white;
     padding: 20px;
+
 }
 
 .feature:hover {
-    -webkit-animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    opacity: 0.7;
 }
 
 .feature img {
@@ -274,18 +277,17 @@
 @media screen and (max-width: 700px) {
     .start_buiz {
         flex-direction: column;
-        margin: 25px;
+        margin: 0;
         padding: 0;
-        margin: auto;
         overflow: hidden;
+        margin: auto;
 
     }
 
     .feature {
 
-        margin: 25px;
-        padding: 20px;
-        width: 80%;
+
+        width: 75%;
 
     }
 
@@ -296,18 +298,21 @@
 .feature h2{
     font-weight: 450;
 }
+
+
+
+
 /*PRIZE CARDS*/
 .package {
     display: flex;
-    justify-content: space-around;
-
-    margin: 0;
-    padding: 0;
     width: 75%;
     margin: auto;
+    text-align: center;
+    justify-content: space-around;
 }
 
 .card_h {
+    max-width: 324px;
     background-color: black;
     color: white;
     padding: 20px;
@@ -315,7 +320,7 @@
     text-align: center;
     color: black;
     border: 2px solid black;
-    margin: 25px;
+    
 }
 
 .card_h:hover {
@@ -360,7 +365,9 @@
 
 .feat_set {
     list-style: none;
-    padding-left: 50px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .feat_set li {
@@ -549,3 +556,4 @@
         box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
     }
 }
+

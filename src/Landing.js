@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react";  
 import {Link} from "react-router-dom";
 import "./Landing.css";
 import "./Landingresponse.css";
@@ -87,7 +87,7 @@ const Landing = ({history}) => {
 
                 </div>
 
-                <a href="#start"><img src={down} style={{width:"35px",position:"absolute",right:"10px",bottom:"10px"}}/></a>
+              <a href="#start"><img src={down} style={{width:"35px",position:"absolute",right:"10px",bottom:"10px"}}/></a>
             </div>
             <section class="how_it_works" data-aos="fade-up">
                 <a name="start"/>
@@ -142,29 +142,29 @@ const Landing = ({history}) => {
                         </p>
                     </div>
                 </div>
-                <hr style={{marginTop:"10vh",marginLeft:"50%",border:"0.5px solid #63BD6E",width:"50%"}}/>
+               <hr style={{marginTop:"10vh",marginLeft:"50%",border:"0.5px solid #63BD6E",width:"50%"}}/>
             </section>
             <h2 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px", fontWeight: "500"}}>Start your
                 business
                 journey with
                 Referl</h2>
-            <p style={{textAlign: "center", padding: "7px",fontSize:"20px",color: "#d3e3fc",lineHeight:"30px"}}>Build the simplest and most rewarding referral program in
+            <p style={{textAlign: "center", padding: "7px",fontSize:"20px",color: "#222",lineHeight:"30px"}}>Build the simplest and most rewarding referral program in
                 15
                 minutes.</p>
             <section className="start_buiz">
-                <div className="feature" style={{background: "#77A6F6"}}>
+                <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)",}}>
                     <img src={purse}/>
                     <h2>5X ROI guarantee</h2>
                     <p>Pick a pricing plan, and we guarantee you'll make at least 5x the monthly cost. If you don't,
                         you'll get your money back, no questions asked.</p>
                 </div>
-                <div className="feature" style={{background: "#D3E3FC", color: "black"}}>
+                <div className="feature" style={{background: "rgba(255, 224, 27, 0.5)", color: "black",}}>
                     <img src={shield}/>
                     <h2>Pay only when you earn</h2>
-                    <p style={{color: "#333"}}>Referral payouts to referrers happen only when they successfully send you
+                    <p style={{color: "black"}}>Referral payouts to referrers happen only when they successfully send you
                         customers.</p>
                 </div>
-                <div className="feature" style={{background: "#FC5554",}}>
+                <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)",}}>
                     <img src={kid}/>
                     <h2>Increase repeat & new visits</h2>
                     <p>Stores with a referral program see a 140% increase in social media mentions, and a 33% lift in
@@ -172,7 +172,7 @@ const Landing = ({history}) => {
                 </div>
             </section>
             <section>
-                <div class="container">
+                <div class="container" style={{padding:"0",margin:"0"}}>
                     <h2 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px", fontWeight: "500"}}>Optional: Go Pro!</h2>
                     <div class="package">
                         <div class="price">
@@ -201,8 +201,8 @@ const Landing = ({history}) => {
                             </ul>
                         </div>
                         <div class="price">
-                            <div class="card_m">
-                                <div class="card-body">
+                            <div class="card_h" style={{background:"white"}}>
+                                <div class="card-body" >
                                     <h5 class="card-title">
                                         <b>PRO</b>
                                     </h5>
