@@ -8,6 +8,7 @@ import share from "./banner-assets/share_square.svg";
 import shop from "./banner-assets/shop.jpg";
 import logout from "./banner-assets/logout.svg";
 import user from "./banner-assets/user.svg";
+import magic from "../assets/magic-wand.svg";
 import search from "./banner-assets/search.svg";
 
 let Arr = [];
@@ -186,7 +187,7 @@ function visualiser(data) {
                 let card = document.createElement("div");
                 card.setAttribute("class", "card2");
                 let image = document.createElement("img");
-                image.setAttribute("src", shop);
+                image.setAttribute("src", "https://picsum.photos/200/300?random="+ Math.floor((Math.random() * 10) + 1));
                 image.setAttribute("class", "card_imag");
                 image.setAttribute("style", "width:50px;");
                 let h = document.createElement("h4");
@@ -252,7 +253,14 @@ const Banner = () => {
     }, []);
 
     return (
+        
         <div className="main_container">
+            <div id= "log_cover" onClick = {()=> {document.getElementById("log_cover").className="nothing";document.getElementById("log_pop").className="nothing";}} className="nothing"></div>
+            <div id="log_pop" className="nothing logout_popup">
+                <p>Oh no! You're leaving.... </p>
+                <p><b>Are you sure??</b> </p>
+                <button onClick={() => app.auth().signOut()}>Yes Log me out</button>
+            </div>
             <section id="status_msg" className="nothing"></section>
             <div id="loginScreen">
                 <a href="#" className="cancel">
@@ -265,14 +273,14 @@ const Banner = () => {
                         borderRadius: "5px",
                         padding: "10px",
                         display: "flex",
-                        background: "#2F80ED",
+                        background: "#FF5975",
                         maxHeight: "5vh"
                     }}>
                         <img src={search} style={{width: "20px"}}/>
                         <input
 
                             style={{
-                                background: "#2F80ED",
+                                background: "#FF5975",
                                 outline: "none",
                                 border: "0",
                                 marginLeft: "1vw",
@@ -326,7 +334,7 @@ const Banner = () => {
                     </section>
 
                     <div className="" align="center" style={{
-                        background: "#FF781F",
+                        background: "#381942",
                         width: "95%",
                         marginTop: "10px",
                         padding: "2%",
@@ -347,7 +355,7 @@ const Banner = () => {
                 <div className="top_first">
                     <img src={user}/>
                     <br/>
-                    <p onClick={() => app.auth().signOut()} style={{paddingLeft: "10px", cursor: "pointer"}}>{name}</p>
+                    <p onClick={() => {document.getElementById("log_cover").className="logout_pop";document.getElementById("log_pop").className="logout_popup";} } style={{paddingLeft: "10px", cursor: "pointer"}}>{name}</p>
                 </div>
 
             </section>
@@ -361,8 +369,6 @@ const Banner = () => {
                             </div>
                             <img src={share}/>
                         </div>
-                        <p className="status-text"> Redeemed Referral
-                        </p>
                     </div>
                     <div className="card_div">
                         <div className="first_row">
@@ -372,14 +378,12 @@ const Banner = () => {
                             </div>
                             <img src={money}/>
                         </div>
-                        <p className="status-text">
-                            Earnings
-                        </p>
+
                     </div>
                 </section>
                 <section className="generate">
                     <a href="#loginScreen">
-                        <b className="btext">Generate Referl</b>
+                        <b className="btext"><img src={magic}/></b>
                     </a>
                 </section>
             </section>

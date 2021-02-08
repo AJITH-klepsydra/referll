@@ -15,7 +15,7 @@ import fb from "./assets/facebook.svg";
 
 import check from "./assets/check.svg";
 import purse from "./assets/purse.svg";
-import shield from "./assets/shield.png";
+import shield from "./assets/shield3.png";
 import down from "./assets/down.svg";
 import kid from "./assets/kid.svg";  
 import logoref from "./assets/logoref.png";  
@@ -159,19 +159,19 @@ const Landing = ({history}) => {
                 15
                 minutes.</p>
             <section className="start_buiz">
-                <div className="feature" style={{background: "#381942",}}>
+                <div className="feature" style={{background: "#FF5975",}}>
                     <img src={purse}/>
                     <h2>5X ROI guarantee</h2>
                     <p>Pick a pricing plan, and we guarantee you'll make at least 5x the monthly cost. If you don't,
                         you'll get your money back, no questions asked.</p>
                 </div>
-                <div className="feature" style={{background: "#FF5975", color: "black",}}>
+                <div className="feature" style={{background: "#FF5975",}}>
                     <img src={shield}/>
                     <h2>Pay only when you earn</h2>
-                    <p style={{color: "black"}}>Referral payouts to referrers happen only when they successfully send you
+                    <p style={{color: "white"}}>Referral payouts to referrers happen only when they successfully send you
                         customers.</p>
                 </div>
-                <div className="feature" style={{background: "#381942",}}>
+                <div className="feature" style={{background: "#FF5975",}}>
                     <img src={kid}/>
                     <h2>Increase repeat & new visits</h2>
                     <p>Stores with a referral program see a 140% increase in social media mentions, and a 33% lift in

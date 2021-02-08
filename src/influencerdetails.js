@@ -98,7 +98,7 @@ const InfDetails = ({history}) => {
                     <hr/>
                     <p class="prof_title">
                         PAYMENT HANDLES <br/>
-                        <label style={{padding: "0", margin: "0"}}>*Fill at least two of the below platforms </label>
+                        <label style={{padding: "0", margin: "0"}}>*Fill at least two of the below platforms for the shop owners to pay you back </label>
                     </p>
 
                     <div class="row">

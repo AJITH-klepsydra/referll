@@ -5,17 +5,16 @@ body {
   overflow-x: hidden;
 }
 
-
-.form_head{
+.form_head {
   font-weight: 500;
   font-size: 35px;
   line-height: 41px;
   color: #000000;
   padding: 0;
   margin: 0;
-  margin-top:12%;
+  margin-top: 12%;
 }
-.form_subhead{
+.form_subhead {
   font-weight: 300;
   font-size: 20px;
   line-height: 23px;
@@ -24,24 +23,24 @@ body {
   padding: 5px;
 }
 
-.my_input_m{
+.my_input_m {
   width: 93%;
   padding: 0;
   margin: 0;
-  border:0px;
+  border: 0px;
   padding: 3%;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .loged {
-  background-color: #2F80ED;
+  background-color: #ff5975;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   font-size: 20px;
   line-height: 23px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -50,35 +49,32 @@ body {
   margin-bottom: 30px;
   border-radius: 2px;
 }
-.loged a{
+.loged a {
   margin-left: auto;
   margin-right: auto;
   padding-top: 5px;
-
-
 }
-.log{
+.log {
   text-align: center;
   border-radius: 2px;
-  background: #FF781F;
-  }
-.myform_p{
+  background: #381942;
+}
+.myform_p {
   font-weight: 300;
   font-size: 18px;
   line-height: 23px;
-  
-  
+
   text-align: center;
 
   color: #777;
 }
-.loged b{
+.loged b {
   color: yellow;
 }
-.linked{
-  color: #FF781F;
+.linked {
+  color: #381942;
 }
-.text_p{
+.text_p {
   color: #777;
   padding: 0;
   margin: 0;
@@ -107,70 +103,67 @@ img.avatar {
 
 .container_m {
   padding: 16px;
-  border:0;
+  border: 0;
 }
 
 span.psw {
   float: right;
   padding-top: 16px;
 }
-.myform_m{
+.myform_m {
   width: 40vw;
   margin: auto;
-  border:0px;
+  border: 0px;
 }
 
-.container_m input{
+.container_m input {
   outline: none;
-  box-shadow: 3px 3px 4px #888888;
+  background-color: #fedada;
   border-radius: 5px;
 }
-.container_m input:hover{
-  box-shadow: 3px 3px 7px #888888;
+.container_m input:hover {
+  box-shadow: 1px 1px 3px #888888;
 }
-.container_m label{
+.container_m label {
   color: #555;
   margin-top: 10px;
 }
 
 @media screen and (max-width: 1100px) {
-
-  .form_head{
+  .form_head {
     margin-top: 20%;
   }
-  .myform_m{
+  .myform_m {
     width: 70vw;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .myform_m{
+  .myform_m {
     margin: 0px;
     width: 90vw;
     margin: auto;
   }
-
 }
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 400px) {
-  .form_head{
+  .form_head {
     font-size: 26px;
   }
-  .form_subhead{
+  .form_subhead {
     font-size: 16px;
   }
-  .loged{
+  .loged {
     font-size: 16px;
   }
-  .myform_p{
+  .myform_p {
     font-size: 15px;
   }
-  .my_input_m{
-  width: 88%;
-  padding: 6%;
-  margin-top: 15px;
-}
-
+  .my_input_m {
+    width: 88%;
+    padding: 6%;
+    margin-top: 15px;
+  }
 }
 @media screen and (max-width: 300px) {
   span.psw {

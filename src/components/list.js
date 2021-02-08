@@ -1,5 +1,5 @@
 import React from "react";
-import "./list.css";
+import "./list.css"; 
 import app from "../base";
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -75,7 +75,7 @@ class App extends React.Component {
         return (
             <div className="App">
                 <section className="listed">
-                    <p>Ongoing referral</p>
+                    <p className="sub_title">Ongoing referral</p>
                     <li className="the_list key">
                         <p className="element">Shop name</p>
                         <p className="element">referal code</p>
@@ -92,7 +92,7 @@ class App extends React.Component {
                                     <ul>
                                         <li className="the_list">
                                             <p className="element">{shop.shop_name}</p>
-                                            <p className="element">{shop.ref_id}</p>
+                                            <p className="element"><b style={{color:"#FF5975"}}>{shop.ref_id}</b></p>
                                             <p className="element">{(shop.ref_details.last_date).split(" ")[0]}</p>
                                             <p className="element">{shop.ref_details.num_of_referrals}</p>
                                             <p className="element">{shop.ref_details.payout}</p>
@@ -103,7 +103,14 @@ class App extends React.Component {
                         })
                     }
 
-                    <p>Expired referrals</p>
+                    <p className="sub_title">Expired referrals</p>
+                    <li className="the_list key">
+                        <p className="element">Shop name</p>
+                        <p className="element">referal code</p>
+                        <p className="element">Expiration date</p>
+                        <p className="element">Referrals</p>
+                        <p className="element">payout</p>
+                    </li>
 
 
                     {
@@ -115,7 +122,7 @@ class App extends React.Component {
                                     <ul>
                                         <li className="the_list">
                                             <p className="element">{shop.shop_name}</p>
-                                            <p className="element">{shop.ref_id}</p>
+                                            <p className="element"><b style={{color:"#FF5975"}}>{shop.ref_id}</b></p>
                                             <p className="element">{(shop.ref_details.last_date).split(" ")[0]}</p>
                                             <p className="element">{shop.ref_details.num_of_referrals}</p>
                                             <p className="element">{shop.ref_details.payout}</p>
