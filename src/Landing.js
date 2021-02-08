@@ -2,16 +2,23 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./Landing.css";
 import "./Landingresponse.css";
-import hero from "./assets/hero-img.svg";
-import ban from "./assets/ban.svg";
-import horn from "./assets/horn.svg";
-import tick from "./assets/tick.svg";
+import hero from "./assets/hero-img.png";
+import ban from "./assets/ban.png";
+import horn from "./assets/horn.png";
+import tick from "./assets/tick.png";
 import arrow from "./assets/arrow.svg";
-import prs from "./assets/prs.svg";
+import prs from "./assets/prs.png";
+
+import linkedin from "./assets/linkedin.svg";
+import insta from "./assets/insta.svg";
+import fb from "./assets/facebook.svg";
+
+import check from "./assets/check.svg";
 import purse from "./assets/purse.svg";
-import shield from "./assets/shield.svg";
+import shield from "./assets/shield.png";
 import down from "./assets/down.svg";
-import kid from "./assets/kid.svg";
+import kid from "./assets/kid.svg";  
+import logoref from "./assets/logoref.png";  
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -51,7 +58,7 @@ const Landing = ({history}) => {
                 <div className="topnav" id="myTopnav">
                     <div className="bar_buts">
                         <a href="#home" className="active ">
-                            Referl
+                           <img style={{width:"50px"}} src={logoref}/>
                         </a>
                         <a href="#news" className="non_active first_bar_but ">
                             <Link className="a_tag" to="#">For Shopowner</Link>{" "}
@@ -77,7 +84,7 @@ const Landing = ({history}) => {
                             <br/>
                             <div className="actions_buts">
                                 <button><a><Link to="/login">Start earning</Link>{" "}</a></button>
-                                <button style={{color: "black", backgroundColor: "white"}}> Boost your business</button>
+                                <button style={{color: "black", backgroundColor: "#e7c6c6"}}> Boost your business</button>
                             </div>
                         </div>
                         <div className="hero_image">
@@ -87,8 +94,7 @@ const Landing = ({history}) => {
 
                 </div>
 
-              <a href="#start"><img src={down} style={{width:"35px",position:"absolute",right:"10px",bottom:"10px"}}/></a>
-            </div>
+        </div>
             <section class="how_it_works" data-aos="fade-up">
                 <a name="start"/>
                 <div class="ticket">
@@ -102,7 +108,7 @@ const Landing = ({history}) => {
                         <p>And the referral reward for a successful referral</p>
                     </div>
                 </div>
-                <hr style={{marginTop:"10vh",border:"0.5px solid orange",width:"50%",marginLeft:"0"}}/>
+                <hr style={{marginTop:"10vh",border:"0.5px solid #FF5975",width:"50%",marginLeft:"0"}}/>
                 <div class="ticket rev">
                     <div class="tick_img">
                         <img src={ban}/>
@@ -115,7 +121,7 @@ const Landing = ({history}) => {
                         </p>
                     </div>
                 </div>
-                <hr style={{marginTop:"10vh",border:"0.5px solid #4ABC96",color:"#777",width:"50%",marginLeft:"50%"}}/>
+                <hr style={{marginTop:"10vh",border:"0.5px solid #381942",color:"#777",width:"50%",marginLeft:"50%"}}/>
                 <div class="ticket">
                     <div class="tick_img">
                         <img src={horn}/>
@@ -127,7 +133,7 @@ const Landing = ({history}) => {
                         <p>- Walk into your store to redeem the deal</p>
                     </div>
                 </div>
-                <hr style={{marginTop:"10vh",border:"0.5px solid #FFDE59",color:"#777",width:"50%",marginLeft:"0",}}/>
+                <hr style={{marginTop:"10vh",border:"0.5px solid #FF5975",color:"#777",width:"50%",marginLeft:"0",}}/>
                 <div class="ticket rev">
                     <div class="tick_img">
                         <img src={prs}/>
@@ -142,9 +148,10 @@ const Landing = ({history}) => {
                         </p>
                     </div>
                 </div>
-               <hr style={{marginTop:"10vh",marginLeft:"50%",border:"0.5px solid #63BD6E",width:"50%"}}/>
+               <hr style={{marginTop:"10vh",marginLeft:"50%",border:"0.5px solid #381942",width:"50%"}}/>
             </section>
-            <h2 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px", fontWeight: "500"}}>Start your
+            <div style={{}}>
+            <h2 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px",paddingTop:"20px", fontWeight: "500"}}>Start your
                 business
                 journey with
                 Referl</h2>
@@ -152,25 +159,26 @@ const Landing = ({history}) => {
                 15
                 minutes.</p>
             <section className="start_buiz">
-                <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)",}}>
+                <div className="feature" style={{background: "#381942",}}>
                     <img src={purse}/>
                     <h2>5X ROI guarantee</h2>
                     <p>Pick a pricing plan, and we guarantee you'll make at least 5x the monthly cost. If you don't,
                         you'll get your money back, no questions asked.</p>
                 </div>
-                <div className="feature" style={{background: "rgba(255, 224, 27, 0.5)", color: "black",}}>
+                <div className="feature" style={{background: "#FF5975", color: "black",}}>
                     <img src={shield}/>
                     <h2>Pay only when you earn</h2>
                     <p style={{color: "black"}}>Referral payouts to referrers happen only when they successfully send you
                         customers.</p>
                 </div>
-                <div className="feature" style={{background: "rgba(0, 166, 152, 0.5)",}}>
+                <div className="feature" style={{background: "#381942",}}>
                     <img src={kid}/>
                     <h2>Increase repeat & new visits</h2>
                     <p>Stores with a referral program see a 140% increase in social media mentions, and a 33% lift in
                         same-store footfall.</p>
                 </div>
             </section>
+            </div>
             <section>
                 <div class="container" style={{padding:"0",margin:"0"}}>
                     <h2 style={{fontSize: "40px",fontFamily: "'Bebas Neue', cursive", textAlign: "center", marginTop: "100px", fontWeight: "500"}}>Optional: Go Pro!</h2>
@@ -195,9 +203,9 @@ const Landing = ({history}) => {
                                 </div>
                             </div>
                             <ul class="feat_set">
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Unlimited Referrals</li>
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Sleek Dashboard</li>
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> 2-click in-store app</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> Unlimited Referrals</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> Sleek Dashboard</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> 2-click in-store app</li>
                             </ul>
                         </div>
                         <div class="price">
@@ -220,12 +228,12 @@ const Landing = ({history}) => {
                                 </div>
                             </div>
                             <ul class="feat_set">
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b>Unlimited Referrals</li>
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Sleek Dashboard</li>
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> 2-click in-store app</li>
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> In-store marketing assets</li>
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> Data export to CSV</li>
-                                <li><b style={{color: "#00A698",padding:"5px"}}>✔</b> 5x ROI Guarantee</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/>Unlimited Referrals</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> Sleek Dashboard</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> 2-click in-store app</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> In-store marketing assets</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> Data export to CSV</li>
+                                <li><img style={{width:"20px",padding:"5px"}} src={check}/> 5x ROI Guarantee</li>
                             </ul>
                         </div>
                     </div>
@@ -265,42 +273,64 @@ const Landing = ({history}) => {
                     </div>
                 </div>
             </section>
-            <section className="contact">
-                <div className="sect">
-                    <h2 style={{fontWeight: 300}}>Referl</h2>
-                    <ul>
-                        <li>@Referl2021</li>
-                        <li>MADE WITH ♡ IN INDIA</li>
-                    </ul>
+            <div className="footer_d">
+                <div className="contain">
+                <div className="col">
+                  <h1>Referl2001</h1>
+                  <ul>
+                    <li>About</li>
+                    <li>MADE IN INDIA 🤍 </li>
+
+                  </ul>
                 </div>
-                <div className="sect">
+                <div className="col">
+                  <h1>Resources</h1>
+                  <ul>
+                    <li>Blogs</li>
+                    <li>Community</li>
+                    <li>Privacy policy</li>
+                    <li>Terms and conditions</li>
+                  </ul>
                 </div>
-                <div className="sect">
-                    <h2>Resources</h2>
-                    <ul>
-                        <li>Blogs</li>
-                        <li>Community</li>
-                        <li>Privacy policy</li>
-                        <li>Terms and conditions</li>
-                    </ul>
+                <div className="col">
+                  <h1>Links</h1>
+                  <ul>
+                    <li>Home</li>
+                    <li>Signup</li>
+                    <li>Services</li>
+
+                  </ul>
                 </div>
-                <div className="sect">
-                    <h2>Links</h2>
-                    <ul>
-                        <li>Login</li>
-                        <li>Signup</li>
-                        <li>Explore</li>
-                    </ul>
+                <div className="col">
+                  <h1>Contact</h1>
+                  <ul>
+                    <li>Linkedin</li>
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+
+                  </ul>
                 </div>
-                <div className="sect">
-                    <h2>Contact</h2>
-                    <ul>
-                        <li>Instagram</li>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                    </ul>
+                <div className="col">
+                  <h1>Support</h1>
+                  <ul>
+                    <li>Contact us</li>
+                    <li>Web chat</li>
+                    <li>Open ticket</li>
+                  </ul>
                 </div>
-            </section>
+                <div className="col social">
+                  <h1>Social</h1>
+                  <ul>
+                    <li><img src={linkedin} width="32" style={{width: "32px"}}/> </li>
+                    <li><img src={insta} width="32" style={{width: "32px"}}/></li>
+                    <li><img src={fb} width="32" style={{width: "32px"}}/></li>
+                  </ul>
+                </div>
+              <div className="clearfix"></div>
+              </div>
+              </div>
+ 
         </React.Fragment>
     );
 };
