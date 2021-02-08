@@ -75,13 +75,13 @@ class App extends React.Component {
         return (
             <div className="App">
                 <section className="listed">
-                    <p className="sub_title">Ongoing referral</p>
+                    <p className="sub_title">Ongoing Referral</p>
                     <li className="the_list key">
-                        <p className="element">Shop name</p>
-                        <p className="element">referal code</p>
-                        <p className="element">Expiration date</p>
+                        <p className="element">Shop Name</p>
+                        <p className="element">Referal Code</p>
+                        <p className="element">Expiration Date</p>
                         <p className="element">Referrals</p>
-                        <p className="element">payout</p>
+                        <p className="element">Payout</p>
                     </li>
                     {
                         this.state.shops &&
@@ -103,13 +103,13 @@ class App extends React.Component {
                         })
                     }
 
-                    <p className="sub_title">Expired referrals</p>
+                    <p className="sub_title">Expired Referrals</p>
                     <li className="the_list key">
-                        <p className="element">Shop name</p>
-                        <p className="element">referal code</p>
-                        <p className="element">Expiration date</p>
+                        <p className="element">Shop Name</p>
+                        <p className="element">Referal Code</p>
+                        <p className="element">Expiration Date</p>
                         <p className="element">Referrals</p>
-                        <p className="element">payout</p>
+                        <p className="element">Payout</p>
                     </li>
 
 
