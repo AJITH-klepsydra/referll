@@ -31,7 +31,7 @@ const Login = ({ history }) => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     const signInWithGoogle = () => {
         auth
-            .signInWithPopup(googleProvider)
+            .signInWithCredential(googleProvider)
             .then((res) => {
                 app
                     .database()

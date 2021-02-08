@@ -259,7 +259,7 @@ const Banner = () => {
             <div id="log_pop" className="nothing logout_popup">
                 <p>Oh no! You're leaving.... </p>
                 <p><b>Are you sure??</b> </p>
-                <button onClick={() => app.auth().signOut()}>Yes Log me out</button>
+                <button onClick={() => app.auth().signOut()}>Yes, Log me out</button>
             </div>
             <section id="status_msg" className="nothing"></section>
             <div id="loginScreen">
