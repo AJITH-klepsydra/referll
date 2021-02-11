@@ -1,14 +1,22 @@
-import React, { useCallback } from "react";
-import { withRouter } from "react-router";
+import React, {useCallback} from "react";
+import {withRouter} from "react-router";
 import app from "./base.js";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import 'firebase/database';
 import "./Login.css";
 import google from "./assets/google.svg";
 
-const Login = ({ history }) => {
+const loading_screen = function (arg) {
+    if (arg) {
+        console.log("Loading Screen Starts")
+    } else {
+        console.log("Loading Screen Stops")
+    }
+}
+
+const Login = ({history}) => {
     const user = firebase.auth().currentUser;
     if (user) {
         app
@@ -31,8 +39,9 @@ const Login = ({ history }) => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     const signInWithGoogle = () => {
         auth
-            .signInWithCredential(googleProvider)
+            .signInWithPopup(googleProvider)
             .then((res) => {
+                loading_screen(true)
                 app
                     .database()
                     .ref("users/influencers")
@@ -55,6 +64,7 @@ const Login = ({ history }) => {
                                     is_completed: false,
                                     full_name: verified_name,
                                 });
+                            loading_screen(false)
                             history.push("/influencerdetails");
                         } else {
                             app
@@ -65,6 +75,7 @@ const Login = ({ history }) => {
                                 .child("is_completed")
                                 .get()
                                 .then((result) => {
+                                    loading_screen(false)
                                     if (result.val()) {
                                         history.push("/influencer");
                                     } else {
@@ -81,7 +92,7 @@ const Login = ({ history }) => {
     const handleLogin = useCallback(
         async (event) => {
             event.preventDefault();
-            const { email, password } = event.target.elements;
+            const {email, password} = event.target.elements;
             try {
                 await app
                     .auth()
@@ -120,7 +131,7 @@ const Login = ({ history }) => {
                     <h2 className="form_head">Welcome to Referl!</h2>
                     <p className="form_subhead">Login to your account</p>
                     <button className="new loged" onClick={signInWithGoogle}>
-                        <img src={google} width="32px" /><a>Sign in with google</a>
+                        <img src={google} width="32px"/><a>Sign in with google</a>
                     </button>
                     <p className="myform_p">Or sign in with your email</p>
                     <input
@@ -139,8 +150,8 @@ const Login = ({ history }) => {
                         name="password"
                         required
                     />
-                    <br />
-                    <br />
+                    <br/>
+                    <br/>
                     <button className="loged log " onSubmit={handleLogin}>
                         <a>Login</a>
                     </button>
