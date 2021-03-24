@@ -1,6 +1,8 @@
 import React from "react";
 import "./NoteFound.css";
 
+// design logic for the 404 page
+
 const NoteFound = () => {
   return (
     <React.Fragment>
