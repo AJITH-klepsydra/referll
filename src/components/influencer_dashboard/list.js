@@ -1,6 +1,6 @@
 import React from "react";
 import "./list.css"; 
-import app from "../base";
+import app from "../../firebase/base";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";

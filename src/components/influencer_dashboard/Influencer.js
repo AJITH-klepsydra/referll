@@ -1,6 +1,6 @@
 import React from "react";
-import Banner from "./components/banner";
-import App from "./components/list";
+import Banner from "./banner";
+import App from "./list";
 
 const Influencer = () => {
   return (

@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Home from "./Home";
-import Login from "./Login";
-import SignUp from "./SignUp";
-import {AuthProvider} from "./Auth";
-import PrivateRoute from "./PrivateRoute";
-import Landing from "./Landing";
-import Owner from "./Owner";
-import Influencer from "./Influencer";
-import InfDetails from "./influencerdetails";
-import NotFound from "./NoteFound";
+import Home from "./components/influencer_dashboard/Home";
+import Login from "./components/auth/Login";
+import SignUp from "./components/auth/SignUp";
+import {AuthProvider} from "./firebase/Auth";
+import PrivateRoute from "./firebase/PrivateRoute";
+import Landing from "./components/home/Landing";
+import Owner from "./components/owner_dashboard/Owner";
+import Influencer from "./components/influencer_dashboard/Influencer";
+import InfDetails from "./components/profile/influencerdetails";
+import NotFound from "./components/pagenotfound/NoteFound";
 import AOS from 'aos';
 
 const App = () => {

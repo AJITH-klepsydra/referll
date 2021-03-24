@@ -1,0 +1,93 @@
+@media (max-width: 667px) {
+    .hero_buts {
+        width: 90%;
+        margin: auto;
+        flex-direction: column-reverse;
+    }
+
+    .bar_buts {
+        width: 90%;
+        margin: auto;
+    }
+
+    .first_bar_but {
+        margin: 0;
+    }
+
+    .hero_image img {
+        width: 53vw;
+        margin-left: 20vw;
+    }
+
+    .hero_cont h1 {
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    .hero_cont {
+        width: 100%;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .actions_buts button {
+        padding-top: 15px;
+        font-size: 15px;
+        line-height: 16px;
+    }
+
+    .actions_buts a {
+        font-size: 15px;
+    }
+
+    .package {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .how_it_works {
+        width: 90%;
+        margin: auto;
+        padding-top: 2%;
+    }
+
+    .tick_img {
+        width: 25vw;
+    }
+
+    .tick_img img {
+        width: 19vw;
+        padding-top: 2vw;
+        padding: 2vw;
+    }
+
+    .ticket_cont h2 {
+        font-size: 20px;
+        line-height: 21px;
+    }
+
+    .ticket_cont p {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .refere {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .shop_crd {
+        margin: 5px;
+    }
+
+    .shop_crd_list {
+        display: flex;
+    }
+
+    .res h2 {
+        font-size: 40px;
+    }
+}

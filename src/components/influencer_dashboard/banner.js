@@ -1,15 +1,13 @@
 import React, {useState, useEffect} from "react";
 import "./banner.css";
-import app from "../base";
+import app from "../../firebase/base";
 import firebase from "firebase/app";
 import "firebase/auth";
-import money from "./banner-assets/money.svg";
-import share from "./banner-assets/share_square.svg";
-import shop from "./banner-assets/shop.jpg";
-import logout from "./banner-assets/logout.svg";
-import user from "./banner-assets/user.svg";
-import magic from "../assets/magic-wand.svg";
-import search from "./banner-assets/search.svg";
+import money from "../../assets/money.svg";
+import share from "../../assets/share_square.svg";
+import user from "../../assets/user.svg";
+import magic from "../../assets/magic-wand.svg";
+import search from "../../assets/search.svg";
 
 let Arr = [];
 

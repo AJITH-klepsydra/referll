@@ -1,23 +1,16 @@
 import React, {useCallback} from "react";
 import {withRouter} from "react-router";
-import app from "./base.js";
-import {Link} from "react-router-dom";
+import app from "../../firebase/base";
 import firebase from "firebase/app";
 import "firebase/auth";
 import 'firebase/database';
-import "./Login.css";
-import google from "./assets/google.svg";
+import "./SignUp.css";
+import google from "../../assets/google.svg";
+import {Link} from "react-router-dom";
 
-const loading_screen = function (arg) {
-    if (arg) {
-        console.log("Loading Screen Starts")
-    } else {
-        console.log("Loading Screen Stops")
-    }
-}
+const SignUp = ({history}) => {
 
-const Login = ({history}) => {
-    const user = firebase.auth().currentUser;
+    const user = firebase.auth().currentUser
     if (user) {
         app
             .database()
@@ -41,7 +34,8 @@ const Login = ({history}) => {
         auth
             .signInWithPopup(googleProvider)
             .then((res) => {
-                loading_screen(true)
+                console.log(res.user.uid);
+                console.log(res.user.displayName);
                 app
                     .database()
                     .ref("users/influencers")
@@ -64,7 +58,6 @@ const Login = ({history}) => {
                                     is_completed: false,
                                     full_name: verified_name,
                                 });
-                            loading_screen(false)
                             history.push("/influencerdetails");
                         } else {
                             app
@@ -75,7 +68,6 @@ const Login = ({history}) => {
                                 .child("is_completed")
                                 .get()
                                 .then((result) => {
-                                    loading_screen(false)
                                     if (result.val()) {
                                         history.push("/influencer");
                                     } else {
@@ -89,31 +81,33 @@ const Login = ({history}) => {
                 console.log(error.message);
             });
     };
-    const handleLogin = useCallback(
+    const handleSignUp = useCallback(
         async (event) => {
             event.preventDefault();
-            const {email, password} = event.target.elements;
+            const {email, password, username} = event.target.elements;
             try {
                 await app
                     .auth()
-                    .signInWithEmailAndPassword(email.value, password.value);
+                    .createUserWithEmailAndPassword(email.value, password.value);
                 firebase.auth().onAuthStateChanged((user) => {
+                    if (user) {
+                        let verified_name = username.value.replace(".", "");
+                        verified_name = verified_name.replace("<", "&lt;");
+                        verified_name = verified_name.replace(">", "&gt;");
+                        verified_name = verified_name.replace("#", "");
+                        verified_name = verified_name.replace("$", "");
+                        verified_name = verified_name.replace("|", "");
+                        verified_name = verified_name.replace("^", "");
 
-                    app
-                        .database()
-                        .ref("users")
-                        .child("influencers")
-                        .child(user.uid)
-                        .get()
-                        .then((result) => {
-
-                            if (result.val().is_completed) {
-                                history.push("/influencer");
-                            } else {
-                                // fill the profile
-                                history.push("/influencerdetails");
-                            }
-                        });
+                        console.log(user.uid);
+                        console.log(username);
+                        const ref = app.database().ref("users/influencers").child(user.uid);
+                        ref.child("full_name").set(verified_name);
+                        ref.child("is_completed").set(false);
+                        history.push("/influencerdetails");
+                    } else {
+                        // User not logged in or has just logged out.
+                    }
                 });
             } catch (error) {
                 alert(error);
@@ -124,45 +118,50 @@ const Login = ({history}) => {
 
     return (
         <React.Fragment>
-
-            <form class="myform_m" onSubmit={handleLogin}>
+            <br/>
+            <br/>
+            <form className="myform_m" onSubmit={handleSignUp}>
 
                 <div className="container_m">
                     <h2 className="form_head">Welcome to Referl!</h2>
-                    <p className="form_subhead">Login to your account</p>
+                    <p className="form_subhead">Create your account</p>
                     <button className="new loged" onClick={signInWithGoogle}>
-                        <img src={google} width="32px"/><a>Sign in with google</a>
+                        {" "}
+                        <img src={google} width="32px" alt="Google Login"/>{" "}
+                        <a>Sign up with google</a>
                     </button>
                     <p className="myform_p">Or sign in with your email</p>
                     <input
-                        className="my_input_m"
                         type="text"
-                        name="email"
-                        placeholder="Email id"
+                        placeholder="Username"
+                        className="my_input_m"
+                        name="username"
                         required
                     />
 
 
+                    <input type="text" className="my_input_m" placeholder="Email Id" name="email" required/>
+
                     <input
-                        className="my_input_m"
                         type="password"
+                        className="my_input_m"
                         placeholder="Password"
                         name="password"
                         required
                     />
-                    <br/>
-                    <br/>
-                    <button className="loged log " onSubmit={handleLogin}>
-                        <a>Login</a>
+
+                    <button className="loged log " onSubmit={handleSignUp}>
+                        <a>Sign Up</a>
                     </button>
 
                 </div>
-                <p className="text_p">Don't have an account? <Link className="linked" to="/signup">SignUp</Link>{""}</p>
 
+                <p className="text_p">Already have an account? <Link className="linked" to="/login">Login</Link></p>
 
             </form>
+            <br/>
         </React.Fragment>
     );
 };
 
-export default withRouter(Login);
+export default withRouter(SignUp);

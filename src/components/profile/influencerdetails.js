@@ -1,6 +1,6 @@
 import React, {useCallback} from "react";
 import {withRouter} from "react-router";
-import app from "./base";
+import app from "../../firebase/base";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
