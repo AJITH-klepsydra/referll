@@ -5,8 +5,8 @@ import App from "./list";
 const Influencer = () => {
   return (
     <div>
-      <Banner />
-      <App />
+       <Banner />  {/* Including banner component, check banner.js in same directory */ }
+       <App />     {/* Including App component , check list.js in same directory */ }
     </div>
   ); 
 };

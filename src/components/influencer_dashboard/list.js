@@ -34,7 +34,7 @@ class App extends React.Component {
                         }
 
                         for (const [key, value] of Object.entries(data)) {
-                            if (Date.parse(value.last_date) >= Date.now()) {
+                            if (Date.parse(value.last_date) >= Date.now()) {                    // Checks wheter offer is existing or expired
                                 let item = {};
                                 item["shop_name"] = shop_name;
                                 item["ref_id"] = key;
@@ -64,8 +64,8 @@ class App extends React.Component {
 
                     });
 
-                    this.setState({shops: final});
-                    this.setState({expshops: expfinal});
+                    this.setState({shops: final});                      // Stores data of existing offers into 'shops'.
+                    this.setState({expshops: expfinal});                // Stores data of expired offers into 'expshops'.
                 })
                 .catch((error) => console.log(error));
         }
@@ -85,7 +85,7 @@ class App extends React.Component {
                     </li>
                     {
                         this.state.shops &&
-                        this.state.shops.map(shop => {
+                        this.state.shops.map(shop => {          // Maps existing offers from 'shops' (See line 67)
                             return (
 
                                 <div>
@@ -115,7 +115,7 @@ class App extends React.Component {
 
                     {
                         this.state.expshops &&
-                        this.state.expshops.map(shop => {
+                        this.state.expshops.map(shop => {        // Maps existing offers from 'expshops' (See line 68)
                             return (
 
                                 <div>

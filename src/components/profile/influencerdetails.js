@@ -7,24 +7,27 @@ import "firebase/database";
 import "./Influencerdetails.css";
 
 const InfDetails = ({history}) => {
-    const user = firebase.auth().currentUser;
-    if (user) {
+    const user = firebase.auth().currentUser; // Gets logged in user UID / Details .
+
+    if (user) { // If user is logged in proceed to check .
         app
             .database()
             .ref("users")
             .child("influencers")
             .child(user.uid)
-            .child("is_completed")
+            .child("is_completed") // Checks whether user has already completed filling details.
             .get()
             .then((result) => {
                 if (result.val()) {
-                    history.push("/influencer");
+                    history.push("/influencer");  // If details completed redirects user to dashboard 
+
+                    //else no redirection, hence 'influenceretails.js' (Current file) will be rendered.
                 }
             });
     }
-    const handleDetails = useCallback(
+    const handleDetails = useCallback(  // Function called on submitting the user details.
         async (event) => {
-            if (CheckDetails()) {
+            if (CheckDetails()) { // Calls a function ( see line 149) to check minimum requirement. If fulfilled, Proceeds.
                 const {
                     instaid,
                     facebook,

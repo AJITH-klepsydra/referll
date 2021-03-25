@@ -11,7 +11,7 @@ import search from "../../assets/search.svg";
 
 let Arr = [];
 
-function push_status(status_code, message) {
+function push_status(status_code, message) {   // Snack Bar Javascript.
   let root = document.getElementById("status_msg");
   root.className = "snackbar";
   root.innerHTML = "";
@@ -60,7 +60,7 @@ function shop_selection(e) {
     });
 }
 
-function sentRequest() {
+function sentRequest() {                                                              // Is called on form submission (offer request).
   let user = firebase.auth().currentUser;
   let flag = true;
   if (user) {
@@ -71,8 +71,8 @@ function sentRequest() {
       .child("referrals");
     ref
       .get()
-      .then((result) => {
-        if (result.hasChild(Arr["uid"])) {
+      .then((result) => {                                                             // Gets Current User Referal details
+        if (result.hasChild(Arr["uid"])) {                                            
           ref
             .child(Arr["uid"])
             .get()
@@ -80,13 +80,13 @@ function sentRequest() {
               const data = result.val();
               delete data["shop_name"];
               for (const value of Object.values(data)) {
-                if (Date.parse(value["last_date"]) > Date.now()) {
+                if (Date.parse(value["last_date"]) > Date.now()) {                  // Checks whether offer expired or not.
                   flag = false;
                   break;
                 }
               }
               if (flag) {
-                request_existing_check();
+                request_existing_check();                                        // Function (see line 102) Checks whether user request present in shopowner datebase
               } else {
                 push_status(0, "You have an active referral for this offer");
               }
@@ -99,11 +99,11 @@ function sentRequest() {
   }
 }
 
-function request_existing_check() {
-  const user = firebase.auth().currentUser;
-  const ref = app.database().ref("shops").child(Arr["uid"]).child("requests");
-  ref.get().then((result) => {
-    if (!result.hasChild(user.uid)) {
+function request_existing_check() {                                               // On submitting request for a particular offer, checks if there is an existing request by the same user for the same offer.
+  const user = firebase.auth().currentUser;                                       // Gets current user.
+  const ref = app.database().ref("shops").child(Arr["uid"]).child("requests");    // Calls the 'requests' child from shopowner database.
+  ref.get().then((result) => {                                                    
+    if (!result.hasChild(user.uid)) {                                             // If no result found for current user, calls 'makereuest' function (see line 130)
       make_request();
     } else {
       ref
