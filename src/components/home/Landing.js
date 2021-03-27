@@ -60,8 +60,8 @@ const Landing = ({history}) => {
                             <img style={{width: "50px"}} src={logoref}/>
                         </a>
                         <div className="tags">
-                        <a href="#news" className="non_active first_bar_but ">
-                            <Link className="a_tag" to="#">For Shopowner</Link>{" "}
+                        <a  href=""  className="non_active first_bar_but ">
+                            <a className="a_tag" href="https://play.google.com/store/apps/details?id=com.referl.referl">For Shopowner</a>
                         </a>
 
                       
@@ -80,7 +80,7 @@ const Landing = ({history}) => {
                             </p>
                             <br/>
                             
-                                <button ><a data-hover="click me!"><Link to="/login">Start earning</Link>{" "}</a></button>
+                                <button className="btn slide" ><a data-hover="click me!"><Link to="/login">Start earning</Link>{" "}</a></button>
                                 
                            
                         </div>
@@ -93,7 +93,7 @@ const Landing = ({history}) => {
 
             </div>
 
-            {/* ABOUT */}
+{/* ABOUT */}
 
             <section class="how_it_works" data-aos="fade-up">
                 <a name="start"/>
@@ -108,7 +108,7 @@ const Landing = ({history}) => {
                         <p>And the referral reward for a successful referral</p>
                     </div>
                 </div>
-                <hr style={{marginTop: "10vh", border: "0.5px solid #FF5975", width: "50%", marginLeft: "0"}}/>
+                <hr style={{marginTop: "10vh", border: "0.5px solid var(--primary-color)", width: "50%", marginLeft: "0"}}/>
                 <div class="ticket rev">
                     <div class="tick_img">
                         <img src={ban}/>
@@ -123,7 +123,7 @@ const Landing = ({history}) => {
                 </div>
                 <hr style={{
                     marginTop: "10vh",
-                    border: "0.5px solid #381942",
+                    border: "0.5px solid var(--secondary-color)",
                     color: "#777",
                     width: "50%",
                     marginLeft: "50%"
@@ -141,7 +141,7 @@ const Landing = ({history}) => {
                 </div>
                 <hr style={{
                     marginTop: "10vh",
-                    border: "0.5px solid #FF5975",
+                    border: "0.5px solid var(--primary-color)",
                     color: "#777",
                     width: "50%",
                     marginLeft: "0",
@@ -160,7 +160,7 @@ const Landing = ({history}) => {
                         </p>
                     </div>
                 </div>
-                <hr style={{marginTop: "10vh", marginLeft: "50%", border: "0.5px solid #381942", width: "50%"}}/>
+                <hr style={{marginTop: "10vh", marginLeft: "50%", border: "0.5px solid var(--secondary-color)", width: "50%"}}/>
 
 
             </section>
@@ -232,7 +232,7 @@ const Landing = ({history}) => {
                                     <p style={{color: "white"}} class="card-text">
                                         <font>
                                             {" "}
-                                            <sup>$</sup><b style={{fontSize: "70px", color: "white"}}>0</b>{" "}
+                                            <sup>₹</sup><b style={{fontSize: "70px", color: "white"}}>0</b>{" "}
                                         </font>
                                         <sub>Forever</sub>
                                     </p>
@@ -258,7 +258,7 @@ const Landing = ({history}) => {
                                     <p class="card-text">
                                         <font size="70px">
                                             {" "}
-                                            <sup>$</sup><b style={{fontSize: "70px"}}>14</b>{" "}
+                                            <sup>₹</sup><b style={{fontSize: "70px"}}>1499</b>{" "}
                                         </font>
                                         <sub>per Month</sub>
                                     </p>
@@ -283,6 +283,7 @@ const Landing = ({history}) => {
                     </div>
                 </div>
             </section>
+{/* FOOTER */}
             <section class="footer">
                 <div class="res">
                     <h3 style={{
@@ -293,6 +294,8 @@ const Landing = ({history}) => {
                         fontWeight: "500"
                     }}>Find and refere your favorite shops 💖</h3>
                     <div class="shop_crd_list">
+                        
+                        
                         <div class="shop_crd">
                             <img
                                 src="https://www.freepnglogos.com/uploads/mcdonalds-png-logo/mcdonalds-circle-logo-png-25.png"/>
@@ -323,13 +326,15 @@ const Landing = ({history}) => {
                     </div>
                 </div>
             </section>
+
+{/* BOTTOM FOOTER */}
             <div className="footer_d">
                 <div className="contain">
                     <div className="col">
                         <h1>Referl2001</h1>
                         <ul>
                             <li>About</li>
-                            <li>MADE IN INDIA 🤍</li>
+                            <li>MADE IN INDIA </li>
 
                         </ul>
                     </div>

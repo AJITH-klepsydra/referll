@@ -39,15 +39,16 @@
 
 .non_active:hover {
   background-color: var(--tertiary-color);
+  color: var(--secondary-color);
 }
 
 .active {
   color: white;
-  font-size: 30px;
-  padding: 5px;
+  font-size: 25px;
+  padding: 3px;
   text-align: center;
 
-  margin: 10px;
+  margin: 15px;
 }
 
 @media screen and (max-width: 1156px) {
@@ -114,6 +115,14 @@
 }
 
 /*HERO*/
+@media screen and (max-width: 600px) {
+  .hero p {
+    display: none;
+  }
+  .hero_image img {
+    width: 60vw;
+  }
+}
 .hero {
   padding-top: 8vh;
 }
@@ -161,11 +170,13 @@
   margin-right: 10px;
   outline: none;
   border: none;
+  transition: all 0.3s;
   margin-bottom: 50px;
 }
 
 .hero button:hover {
-  background: #b654d6;
+  background: var(--tertiary-color);
+  color: var(--secondary-color);
 }
 
 .arrow {
@@ -241,6 +252,7 @@
 .feature {
   width: 33.33%;
   margin-top: 25px;
+  border-radius: 10px;
   background-color: var(--secondary-color);
   margin: 20px;
   text-align: center;
@@ -252,14 +264,14 @@
 .feature h2 {
   font-size: 20px;
   font-weight: bolder;
-  color: white;
+  color: var(--tertiary-color);
 }
 .feature p {
   line-height: 25px;
 }
 
 .feature:hover {
-  background-color: var(--secondary-color);
+  background-color: #141f17;
   transform: translateX(20px);
 }
 
@@ -398,11 +410,13 @@
 
 .shop_crd_list {
   display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 .shop_crd {
   width: 25%;
-  background: #ff5975;
+  background: var(--primary-color);
 
   margin: 10px;
 
@@ -433,9 +447,9 @@
 }
 
 .refere {
-  background: #381942;
+  background: var(--secondary-color);
   font-size: 15px;
-
+  cursor: pointer;
   color: white;
   font-weight: 600;
   border-radius: 5px;
@@ -452,18 +466,19 @@
 }
 
 .rose {
-  background: #fedada;
+  background: var(--tertiary-color);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .shop_crd_list {
     margin: 0;
-    padding: 0;
-    overflow: scroll;
+    padding-left: 8%;
+    flex-direction: column;
+    text-align: center;
   }
 
   .shop_crd {
-    min-width: 200px;
+    width: 80%;
   }
 }
 
@@ -511,14 +526,14 @@
   }
 }
 
-/*Footer*/
+/*Footer BOTTOM*/
 
 .footer_d {
   margin-top: 20px;
   width: 100%;
   position: relative;
   height: auto;
-  background-color: #381942;
+  background-color: var(--secondary-color);
 }
 .footer_d .col {
   width: 190px;
