@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  --primary-color: #92e3a9;
+  --secondary-color: #263238;
+  --tertiary-color: #9bc7dd;
+}
 .main_hero {
-  height: 100vh;
-  background: #ff5975;
+  background: var(--primary-color);
   color: white;
 }
-
+/* NAVBAR*/
 .topnav {
   overflow: hidden;
 }
@@ -23,21 +28,17 @@
 }
 
 .non_active {
-  font-size: 20px;
+  font-size: 15px;
   display: flex;
-
+  background-color: var(--secondary-color);
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 10px;
   color: #333;
 }
 
-.first_bar_but {
-  margin-left: 45vw;
-}
-
 .non_active:hover {
-  opacity: 0.7;
+  background-color: var(--tertiary-color);
 }
 
 .active {
@@ -45,7 +46,8 @@
   font-size: 30px;
   padding: 5px;
   text-align: center;
-  margin-left: 4vw;
+
+  margin: 10px;
 }
 
 @media screen and (max-width: 1156px) {
@@ -105,6 +107,8 @@
 }
 
 .bar_buts {
+  display: flex;
+  justify-content: space-between;
   width: 85%;
   margin: auto;
 }
@@ -115,8 +119,8 @@
 }
 
 .hero_buts {
-  width: 75%;
-  margin: auto;
+  width: 85%;
+  margin: auto auto auto auto;
   display: flex;
 }
 
@@ -133,37 +137,34 @@
 }
 
 .hero p {
-  color: #d3e3fc;
+  color: #ececec;
   font-weight: 250;
   font-size: 25px;
   line-height: 41px;
 }
 
 .hero_image {
-  padding: 2%;
+  padding-left: 2%;
 }
 
 .hero_image img {
-  width: 25vw;
-}
-.action_buts {
+  width: 35vw;
 }
 
-.actions_buts button {
-  background: #381942;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  font-size: 20px;
+.hero button {
+  background: var(--secondary-color);
+
+  font-size: 22px;
   text-align: center;
   color: #ffffff;
-  padding: 10px;
+  padding: 15px;
   margin-right: 10px;
   outline: none;
   border: none;
   margin-bottom: 50px;
 }
 
-.actions_buts button:hover {
+.hero button:hover {
   background: #b654d6;
 }
 
@@ -240,16 +241,26 @@
 .feature {
   width: 33.33%;
   margin-top: 25px;
-
-  border-radius: 10px;
+  background-color: var(--secondary-color);
   margin: 20px;
   text-align: center;
   color: white;
   padding: 20px;
+  border: 1px solid var(--primary-color);
+  transition: all 1s ease;
+}
+.feature h2 {
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+}
+.feature p {
+  line-height: 25px;
 }
 
 .feature:hover {
-  opacity: 0.7;
+  background-color: var(--secondary-color);
+  transform: translateX(20px);
 }
 
 .feature img {
@@ -288,8 +299,9 @@
 }
 
 .card_h {
+  position: relative;
   max-width: 324px;
-  background-color: #381942;
+  background-color: var(--secondary-color);
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -317,7 +329,13 @@
   border: 2px solid #381942;
   margin: 25px;
 }
-
+.cs_tag {
+  position: absolute;
+  background-color: var(--primary-color);
+  right: 0;
+  padding: 5px;
+  color: white;
+}
 .card_m:hover {
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

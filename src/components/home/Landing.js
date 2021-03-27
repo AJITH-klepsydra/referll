@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./Landing.css";
 import "./Landingresponse.css";
-import hero from "../../assets/hero-img.png";
+import hero from "../../assets/hero-img.svg";
 import ban from "../../assets/ban.png";
 import horn from "../../assets/horn.png";
 import tick from "../../assets/tick.png";
@@ -53,24 +53,23 @@ const Landing = ({history}) => {
     return (
         <React.Fragment>
             <div className="main_hero" data-aos="fade-up">
+                {/* NAVIGATION BAR */}
                 <div className="topnav" id="myTopnav">
                     <div className="bar_buts">
                         <a href="#home" className="active ">
                             <img style={{width: "50px"}} src={logoref}/>
                         </a>
+                        <div className="tags">
                         <a href="#news" className="non_active first_bar_but ">
                             <Link className="a_tag" to="#">For Shopowner</Link>{" "}
                         </a>
-                        <a href="/login" className="non_active ">
-                            <Link className="a_tag" to="/login">For Influencer</Link>{" "}
-                        </a>
-                        <a className="icon" onClick={myFunction}>
-                            &#9776;
-                        </a>
+
+                      
+                        </div>
                     </div>
                 </div>
 
-
+{/* HERO SECTION */}
                 <div className="hero">
                     <div className="hero_buts">
                         <div className="hero_cont">
@@ -80,11 +79,10 @@ const Landing = ({history}) => {
                                 your shops.
                             </p>
                             <br/>
-                            <div className="actions_buts">
-                                <button><a><Link to="/login">Start earning</Link>{" "}</a></button>
-                                <button style={{color: "black", backgroundColor: "#e7c6c6"}}> Boost your business
-                                </button>
-                            </div>
+                            
+                                <button ><a data-hover="click me!"><Link to="/login">Start earning</Link>{" "}</a></button>
+                                
+                           
                         </div>
                         <div className="hero_image">
                             <img src={hero}/>
@@ -94,6 +92,9 @@ const Landing = ({history}) => {
                 </div>
 
             </div>
+
+            {/* ABOUT */}
+
             <section class="how_it_works" data-aos="fade-up">
                 <a name="start"/>
                 <div class="ticket">
@@ -160,6 +161,8 @@ const Landing = ({history}) => {
                     </div>
                 </div>
                 <hr style={{marginTop: "10vh", marginLeft: "50%", border: "0.5px solid #381942", width: "50%"}}/>
+
+
             </section>
             <div style={{}}>
                 <h2 style={{
@@ -182,21 +185,24 @@ const Landing = ({history}) => {
                 }}>Build the simplest and most rewarding referral program in
                     15
                     minutes.</p>
+
+
+ {/* FEATURES */}
                 <section className="start_buiz">
-                    <div className="feature" style={{background: "#FF5975",}}>
+                    <div className="feature" >
                         <img src={purse}/>
                         <h2>5X ROI guarantee</h2>
                         <p>Pick a pricing plan, and we guarantee you'll make at least 5x the monthly cost. If you don't,
                             you'll get your money back, no questions asked.</p>
                     </div>
-                    <div className="feature" style={{background: "#FF5975",}}>
+                    <div className="feature" >
                         <img src={shield}/>
                         <h2>Pay only when you earn</h2>
                         <p style={{color: "white"}}>Referral payouts to referrers happen only when they successfully
                             send you
                             customers.</p>
                     </div>
-                    <div className="feature" style={{background: "#FF5975",}}>
+                    <div className="feature" >
                         <img src={kid}/>
                         <h2>Increase repeat & new visits</h2>
                         <p>Stores with a referral program see a 140% increase in social media mentions, and a 33% lift
@@ -205,6 +211,7 @@ const Landing = ({history}) => {
                     </div>
                 </section>
             </div>
+{/* PRICES */}
             <section>
                 <div class="container" style={{padding: "0", margin: "0"}}>
                     <h2 style={{
@@ -242,6 +249,7 @@ const Landing = ({history}) => {
                         </div>
                         <div class="price">
                             <div class="card_h" style={{background: "white"}}>
+                                <div class="cs_tag">Coming Soon!</div>
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <b>PRO</b>
@@ -259,6 +267,9 @@ const Landing = ({history}) => {
                                     </p>
                                 </div>
                             </div>
+
+                            
+
                             <ul class="feat_set">
                                 <li><img style={{width: "20px", padding: "5px"}} src={check}/>Unlimited Referrals</li>
                                 <li><img style={{width: "20px", padding: "5px"}} src={check}/> Sleek Dashboard</li>
