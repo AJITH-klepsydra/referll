@@ -80,7 +80,7 @@ const Landing = ({history}) => {
                             </p>
                             <br/>
                             
-                                <button className="btn slide" ><a data-hover="click me!"><Link to="/login">Start earning</Link>{" "}</a></button>
+                                <button className="btn slide" ><a data-hover="click me!"><Link to="/login">Start Earning</Link>{" "}</a></button>
                                 
                            
                         </div>
@@ -331,7 +331,7 @@ const Landing = ({history}) => {
             <div className="footer_d">
                 <div className="contain">
                     <div className="col">
-                        <h1>Referl2001</h1>
+                        <h1>Referl2021</h1>
                         <ul>
                             <li>About</li>
                             <li>MADE IN INDIA </li>
