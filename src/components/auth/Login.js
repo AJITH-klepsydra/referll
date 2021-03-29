@@ -39,7 +39,7 @@ const Login = ({history}) => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     const signInWithGoogle = () => {
         //google auth proceedures
-        console.log("Started")
+        console.log("Started Google Auth Login")
         auth
             .signInWithPopup(googleProvider)
             .then((res) => {
@@ -85,12 +85,12 @@ const Login = ({history}) => {
                                     }
                                 });
                         }
-                        console.log("Ended")
+                        console.log("Ended Login Session")
                     });
             })
             .catch((error) => {
                 console.log(error.message);
-                console.log("Ended")
+                console.log("Ended Login Session")
             });
     };
     const handleLogin = useCallback(

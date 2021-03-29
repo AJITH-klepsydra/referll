@@ -30,7 +30,7 @@ const SignUp = ({history}) => {
     const auth = firebase.auth();
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     const signInWithGoogle = () => {
-        console.log("Started");
+        console.log("Started Google Auth Sign In");
         auth
             .signInWithPopup(googleProvider)
             .then((res) => {
@@ -75,7 +75,7 @@ const SignUp = ({history}) => {
                                     }
                                 });
                         }
-                        console.log("Ended")
+                        console.log("Ended Sign Up Session")
                     });
             })
             .catch((error) => {
