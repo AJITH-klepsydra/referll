@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
 :root {
   --primary-color: #92e3a9;
   --secondary-color: #263238;
   --tertiary-color: #9bc7dd;
 }
+body {
+  cursor: url("/src/assets/cursor.gif"), default;
+}
+
 .main_hero {
   background: var(--primary-color);
   color: white;
@@ -627,4 +630,26 @@
   .footer_d .col {
     width: 100%;
   }
+}
+
+/* SCROLL BAR */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
