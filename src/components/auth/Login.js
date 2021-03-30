@@ -40,6 +40,8 @@ const Login = ({history}) => {
     const signInWithGoogle = () => {
         //google auth proceedures
         console.log("Started Google Auth Login")
+        document.getElementById('cvr_anm').style.display='grid';
+        
         auth
             .signInWithPopup(googleProvider)
             .then((res) => {
@@ -127,6 +129,7 @@ const Login = ({history}) => {
 
     return (
         <React.Fragment>
+            <div className="cover_anime" id="cvr_anm"><div className="loader"></div></div>
             <form class="myform_m" onSubmit={handleLogin}>
                 <div className="container_m">
                     <h2 className="form_head">Welcome to Referl!</h2>
