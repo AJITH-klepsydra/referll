@@ -38,8 +38,7 @@ const Login = ({history}) => {
     const auth = firebase.auth();
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     const signInWithGoogle = () => {
-        //google auth proceedures
-        console.log("Started Google Auth Login")
+        //google auth procedures
         document.getElementById('cvr_anm').style.display='grid';
         
         auth
@@ -87,12 +86,10 @@ const Login = ({history}) => {
                                     }
                                 });
                         }
-                        console.log("Ended Login Session")
                     });
             })
             .catch((error) => {
                 console.log(error.message);
-                console.log("Ended Login Session")
             });
     };
     const handleLogin = useCallback(
